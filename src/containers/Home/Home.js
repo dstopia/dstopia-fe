@@ -1,32 +1,23 @@
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
+import { Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Chats from '../../components/Chats/Chats'
+import { connect } from 'react-redux'
 
+/** Components */
 import Navbar from '../../components/Navbar/Navbar'
 import Post from '../../components/Post/Post'
-import Category from '../Pages/Category/Category'
+import ChatsBody from '../../components/Chats/ChatsBody'
+// import Category from '../Pages/Category/Category'
 
-class Home extends Component {
-    constructor(props) {
-        super(props)
-        console.log(props)
-    }
-    render() {
-        return (
+function Home() {
+    return (
             <Fragment>
                 <Navbar />
-                {/* <button onClick={this.props.greet}>button</button>
-                <div>{this.props.user}</div> */}
-                <Chats />
-                <Chats />
-                <Post />
                 <Router>
-                    <Route path='/category' component={Category} />
+                    <Route path='/' exact component={Post} />
+                    <Route path='/chats' component={ChatsBody} />
                 </Router>
             </Fragment>
         )
-    }
 }
 
 const mapStateToProos = (state) => {

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 export default function Navbar() {
     return (
         <Router>
-            <nav className='navbar navbar-expand-lg navbar-light bg-info'>
+            <nav className='navbar navbar-expand-lg navbar-dark bg-info'>
                 <div className='container'>
                     <Link className='navbar-brand' to='/'>
                         Dstopia
