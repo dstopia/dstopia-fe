@@ -12,6 +12,7 @@ import NavbarLte from '../../components/Navbar/NavbarLte'
 import  Photos  from '../../components/Photos/Photos'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
+import PageNotFound from '../Pages/404/PageNotFound'
 // import Category from '../Pages/Category/Category'
 
 function Home() {
@@ -23,6 +24,7 @@ function Home() {
             <Route path='/' exact component={Lobby} />
             <Route path='/journey' component={Journey} />
             <Route path='/chats' component={ChatsBody} />
+            <Route path='/404' component={PageNotFound} />
         </Router>
     )
 }
