@@ -1,10 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export default function Post() {
+export default function PostClosed() {
     return (
-        <Router>
-            <div className='card card-widget m-3'>
+        <div>
+            <div className='card card-widget m-3 collapsed-card'>
                 <div className='card-header'>
                     <div className='user-block'>
                         <img
@@ -19,7 +19,6 @@ export default function Post() {
                             Shared publicly - 7:30 PM Today
                         </span>
                     </div>
-                    {/* /.user-block */}
                     <div className='card-tools'>
                         <button
                             type='button'
@@ -31,7 +30,7 @@ export default function Post() {
                             type='button'
                             className='btn btn-tool'
                             data-card-widget='collapse'>
-                            <i className='fas fa-minus' />
+                            <i className='fas fa-plus' />
                         </button>
                         <button
                             type='button'
@@ -40,10 +39,8 @@ export default function Post() {
                             <i className='fas fa-times' />
                         </button>
                     </div>
-                    {/* /.card-tools */}
                 </div>
-                {/* /.card-header */}
-                <div className='card-body'>
+                <div className='card-body' style={{ display: 'none' }}>
                     <img
                         className='img-fluid pad'
                         src='https://source.unsplash.com/random/1254x836'
@@ -62,10 +59,10 @@ export default function Post() {
                         127 likes - 3 comments
                     </span>
                 </div>
-                {/* /.card-body */}
-                <div className='card-footer card-comments'>
+                <div
+                    className='card-footer card-comments'
+                    style={{ display: 'none' }}>
                     <div className='card-comment'>
-                        {/* User image */}
                         <img
                             className='img-circle img-sm'
                             src='https://source.unsplash.com/random/128x128'
@@ -78,16 +75,12 @@ export default function Post() {
                                     8:03 PM Today
                                 </span>
                             </span>
-                            {/* /.username */}
                             It is a long established fact that a reader will be
                             distracted by the readable content of a page when
                             looking at its layout.
                         </div>
-                        {/* /.comment-text */}
                     </div>
-                    {/* /.card-comment */}
                     <div className='card-comment'>
-                        {/* User image */}
                         <img
                             className='img-circle img-sm'
                             src='https://source.unsplash.com/random/128x128'
@@ -100,24 +93,19 @@ export default function Post() {
                                     8:03 PM Today
                                 </span>
                             </span>
-                            {/* /.username */}
                             It is a long established fact that a reader will be
                             distracted by the readable content of a page when
                             looking at its layout.
                         </div>
-                        {/* /.comment-text */}
                     </div>
-                    {/* /.card-comment */}
                 </div>
-                {/* /.card-footer */}
-                <div className='card-footer'>
+                <div className='card-footer' style={{ display: 'none' }}>
                     <form action='#' method='post'>
                         <img
                             className='img-fluid img-circle img-sm'
                             src='https://source.unsplash.com/random/128x128'
                             alt='Alt Text'
                         />
-                        {/* .img-push is used to add margin to elements next to floating images */}
                         <div className='img-push'>
                             <input
                                 type='text'
@@ -127,8 +115,7 @@ export default function Post() {
                         </div>
                     </form>
                 </div>
-                {/* /.card-footer */}
             </div>
-        </Router>
+        </div>
     )
 }
