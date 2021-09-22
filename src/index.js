@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 /** Bootstraps */
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+// import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 /** Admin-Lte */
