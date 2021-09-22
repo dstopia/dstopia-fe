@@ -16,12 +16,12 @@ export default function NavbarLte() {
                     </Link>
                 </li>
                 <li className='nav-item d-none d-sm-inline-block'>
-                    <Link to='../../index3.html' className='nav-link'>
+                    <Link to='/' className='nav-link'>
                         Home
                     </Link>
                 </li>
                 <li className='nav-item d-none d-sm-inline-block'>
-                    <Link to='#' className='nav-link'>
+                    <Link to='/' className='nav-link'>
                         Contact
                     </Link>
                 </li>

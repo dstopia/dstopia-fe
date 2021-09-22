@@ -2,29 +2,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 /** Components */
-// import Navbar from '../../components/Navbar/Navbar'
 import ChatsBody from '../../components/Chats/ChatsBody'
-import Journey from '../Pages/Journey/Journey'
 import Map from '../../components/Map/Map'
 import Post from '../../components/Post/Post'
 import PostClosed from '../../components/Post/PostClosed'
 import NavbarLte from '../../components/Navbar/NavbarLte'
-import  Photos  from '../../components/Photos/Photos'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import SidebarLte from '../../components/Sidebar/SidebarLte'
-import PageNotFound from '../Pages/404/PageNotFound'
-// import Category from '../Pages/Category/Category'
 
-function Home() {
+function Home(props) {
+    console.log(props)
     return (
         <Router>
-            {/* <Navbar /> */}
             <NavbarLte />
-            <SidebarLte />
             <Route path='/' exact component={Lobby} />
-            <Route path='/journey' component={Journey} />
-            <Route path='/chats' component={ChatsBody} />
-            <Route path='/404' component={PageNotFound} />
         </Router>
     )
 }
@@ -44,9 +33,6 @@ function Lobby() {
                     <Post />
                 </div>
             </div>
-            {/* <div className="row">
-                <Photos />
-            </div> */}
         </div>
     )
 }
@@ -54,7 +40,7 @@ function Lobby() {
 const mapStateToProos = (state) => {
     // state global
     return {
-        user: state.user,
+        user: state,
     }
 }
 
