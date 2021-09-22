@@ -69,28 +69,6 @@ export default function Post() {
                         <img
                             className='img-circle img-sm'
                             src='https://source.unsplash.com/random/128x128'
-                            alt='Nout Found'
-                        />
-                        <div className='comment-text'>
-                            <span className='username'>
-                                Maria Gonzales
-                                <span className='text-muted float-right'>
-                                    8:03 PM Today
-                                </span>
-                            </span>
-                            {/* /.username */}
-                            It is a long established fact that a reader will be
-                            distracted by the readable content of a page when
-                            looking at its layout.
-                        </div>
-                        {/* /.comment-text */}
-                    </div>
-                    {/* /.card-comment */}
-                    <div className='card-comment'>
-                        {/* User image */}
-                        <img
-                            className='img-circle img-sm'
-                            src='https://source.unsplash.com/random/128x128'
                             alt='Not found'
                         />
                         <div className='comment-text'>

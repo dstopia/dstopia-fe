@@ -2,53 +2,67 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 /** Components */
-// import Navbar from '../../components/Navbar/Navbar'
 import ChatsBody from '../../components/Chats/ChatsBody'
 import Journey from '../Pages/Journey/Journey'
 import Map from '../../components/Map/Map'
 import Post from '../../components/Post/Post'
 import PostClosed from '../../components/Post/PostClosed'
 import NavbarLte from '../../components/Navbar/NavbarLte'
-import Photos  from '../../components/Photos/Photos'
-import Sidebar from '../../components/Sidebar/Sidebar'
 import Gallery from '../Pages/Galery/Galery'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
 import PageNotFound from '../Pages/404/PageNotFound'
-// import Category from '../Pages/Category/Category'
 
 function Home() {
     return (
         <Router>
-            {/* <Navbar /> */}
-            <NavbarLte />
-            <SidebarLte />
-            <Route path='/' exact component={Lobby} />
-            <Route path='/journey' component={Journey} />
-            <Route path='/gallery' component={Gallery} />
-            <Route path='/chats' component={ChatsBody} />
-            <Route path='/404' component={PageNotFound} />
+            <div className='wrapper'>
+                {/* Preloader */}
+                <div className='preloader flex-column justify-content-center align-items-center'>
+                    <h6>Loading...</h6>
+                </div>
+
+                {/* <Navbar /> */}
+                <NavbarLte />
+                <SidebarLte />
+                <div className='content-wrapper'>
+                    <Route path='/' exact component={Lobby} />
+                    <Route path='/journey' component={Journey} />
+                    <Route path='/gallery' component={Gallery} />
+                    <Route path='/chats' component={ChatsBody} />
+                    <Route path='/404' component={PageNotFound} />
+                </div>
+            </div>
         </Router>
     )
 }
 
 function Lobby() {
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-lg-7'>
-                    <Map />
-                    <ChatsBody />
+        <div className='row'>
+            <div className='col-lg-5 overflow-auto'>
+                <Post />
+                <PostClosed />
+                <PostClosed />
+                <PostClosed />
+            </div>
+            <div className='col-lg-7'>
+                <Map />
+                <div className='card m-3'>
+                    <div className='card-header'>title</div>
+                    <div className='card-body'>Something here</div>
+                    <div className='card-footer'>footer</div>
                 </div>
-                <div className='col-lg-5'>
-                    <PostClosed />
-                    <PostClosed />
-                    <PostClosed />
-                    <Post />
+                <div className='card m-3'>
+                    <div className='card-header'>title</div>
+                    <div className='card-body'>Something here</div>
+                    <div className='card-footer'>footer</div>
+                </div>
+                <div className='card m-3'>
+                    <div className='card-header'>title</div>
+                    <div className='card-body'>Something here</div>
+                    <div className='card-footer'>footer</div>
                 </div>
             </div>
-            {/* <div className="row">
-                <Photos />
-            </div> */}
         </div>
     )
 }
