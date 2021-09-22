@@ -1,48 +1,130 @@
 import React from 'react'
+import Media from 'react-media'
 
 export default function Photos() {
     return (
-        <div className='card card-success'>
-            <div className='card-body'>
-                <div className='row'>
-                    <div className='col-md-4 col-lg-3 col-xl-4'>
-                        <Photo />
-                    </div>
-                    <div className='col-md-4 col-lg-3 col-xl-4'>
-                        <Photo />
-                    </div>
-                    <div className='col-md-4 col-lg-3 col-xl-4'>
-                        <Photo />
-                    </div>
-                    <div className='col-md-4 col-lg-3 col-xl-4'>
-                        <Photo />
-                    </div>
-                </div>
-            </div>
+        <div>
+            <Media queries= {{ small : {maxWidth: 700}}}>{
+                matches => 
+                    matches.small ? (
+                        <div className='card card-success'>
+                            <div className='card-body'>
+                                <div className="container-fluid">
+                                    <div className='row row-cols-1 baris'>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className='card card-success'>
+                            <div className='card-body'>
+                                <div className="container-fluid">
+                                    <div className='row row-cols-2 baris'>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                        <div className='col'>
+                                            <Photo url={'https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop'}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+            }</Media>
         </div>
     )
 }
 
-export function Photo() {
-    return (
-        <div className='card mb-2'>
+// class Photo extends React.Component{
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             source: ''
+//         }
+//     }
+
+//     render() {
+//         return (
+//             <div className='card mb-2 mt-3'>
+//             <img
+//                 className='card-img-top'
+//                 src={this.state.source}
+//                 alt='not found 3'
+//             />
+//         </div>
+//         )
+//     }
+// }
+
+
+// <div className='card card-success'>
+//             <div className='card-body'>
+//                 <div className="container-fluid">
+//                     <div className='row row-cols-2 baris'>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                         <div className='col'>
+//                             <Photo url={'https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop'}/>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+// </div>
+
+const Photo = (props) => {
+
+        return (
+            <div className='card mb-2 mt-3 shadow'>
             <img
-                className='card-img-top'
-                src='https://adminlte.io/themes/v3/dist/img/photo3.jpg'
+                className='card-img-top '
+                src={props.url}
                 alt='not found 3'
             />
-            <div className='card-img-overlay'>
-                <h5 className='card-title text-primary'>Card Title</h5>
-                <p className='card-text pb-1 pt-1 text-white'>
-                    Lorem ipsum dolor <br />
-                    sit amet, consectetur <br />
-                    adipisicing elit sed <br />
-                    do eiusmod tempor.
-                </p>
-                <a href='/' className='text-primary'>
-                    Last update 3 days ago
-                </a>
-            </div>
         </div>
-    )
+        )
+    
 }
