@@ -9,8 +9,9 @@ import Map from '../../components/Map/Map'
 import Post from '../../components/Post/Post'
 import PostClosed from '../../components/Post/PostClosed'
 import NavbarLte from '../../components/Navbar/NavbarLte'
-import  Photos  from '../../components/Photos/Photos'
+import Photos  from '../../components/Photos/Photos'
 import Sidebar from '../../components/Sidebar/Sidebar'
+import Gallery from '../Pages/Galery/Galery'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
 import PageNotFound from '../Pages/404/PageNotFound'
 // import Category from '../Pages/Category/Category'
@@ -23,6 +24,7 @@ function Home() {
             <SidebarLte />
             <Route path='/' exact component={Lobby} />
             <Route path='/journey' component={Journey} />
+            <Route path='/gallery' component={Gallery} />
             <Route path='/chats' component={ChatsBody} />
             <Route path='/404' component={PageNotFound} />
         </Router>
