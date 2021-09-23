@@ -66,7 +66,10 @@ export default function NavbarLte() {
                 </li>
                 {/* Messages Dropdown Menu */}
                 <li className='nav-item dropdown'>
-                    <Link className='nav-link' data-toggle='dropdown' to='/chats'>
+                    <Link
+                        className='nav-link'
+                        data-toggle='dropdown'
+                        to='/chats'>
                         <i className='far fa-comments' />
                         <span className='badge badge-danger navbar-badge'>
                             3
@@ -98,7 +101,7 @@ export default function NavbarLte() {
                         data-slide='true'
                         to='/'
                         role='button'>
-                        <i className='fas fa-th-large' />
+                        <i className='fas fa-user'></i>
                     </Link>
                 </li>
             </ul>

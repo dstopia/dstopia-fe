@@ -1,35 +1,39 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 import Chats from './Chats.js'
 import ContactsList from './ContactsList.js'
 
-export default function ChatsBody() {
+// data will be fetched from api in the future
 
+export default function ChatsBody() {
     const [chats, setChats] = useState([])
-    
-    // data will be fetched from api in the future
-    const data = [
-        {
-            id:1,
-            username:'Alexander',
-            msg:'Hello everyone, how are you doing?',
-            timeSend:'12:17 AM Today',
-            position: 'left',
-            thumb_img:'https://source.unsplash.com/random/128x128'
-        },{
-            id:1,
-            username:'Lorem Ispum',
-            msg:'Hello everyone, how are you doing?',
-            timeSend:'12:30 AM Today',
-            position: 'right',
-            thumb_img:'https://source.unsplash.com/random/128x128'
-        }
-    ]
-    
-    useEffect(()=>{
-        setChats(data)
-    },[data])
-    
+
+    const chatsData = useMemo(() => {
+        const data = [
+            {
+                id: 1,
+                username: 'Alexander',
+                msg: 'Hello everyone, how are you doing?',
+                timeSend: '12:17 AM Today',
+                position: 'left',
+                thumb_img: 'https://source.unsplash.com/random/128x128',
+            },
+            {
+                id: 2,
+                username: 'Lorem Ispum',
+                msg: 'Hello everyone, how are you doing?',
+                timeSend: '12:30 AM Today',
+                position: 'right',
+                thumb_img: 'https://source.unsplash.com/random/128x128',
+            },
+        ]
+        return data
+    }, [])
+
+    useEffect(() => {
+        setChats(chatsData)
+    }, [chatsData])
+
     return (
         <div className='card direct-chat direct-chat-primary m-3'>
             <div
@@ -67,7 +71,7 @@ export default function ChatsBody() {
             <div className='card-body'>
                 {/* Conversations are loaded here */}
                 <div className='direct-chat-messages'>
-                    {chats && chats.map(chat => <Chats chat={chat} />)}
+                    {chats && chats.map((chat) => <Chats key={chat.id} chat={chat} />)}
                 </div>
                 {/*/.direct-chat-messages*/}
                 {/* Contacts are loaded here */}

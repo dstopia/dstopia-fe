@@ -39,7 +39,7 @@ export default function SidebarLte() {
                     </div>
                     <div className='sidebar-search-results'>
                         <div className='list-group'>
-                            <a href='/' className='list-group-item'>
+                            <Link to='/' className='list-group-item'>
                                 <div className='search-title'>
                                     <strong className='text-light' />N
                                     <strong className='text-light' />o
@@ -61,7 +61,7 @@ export default function SidebarLte() {
                                     <strong className='text-light' />
                                 </div>
                                 <div className='search-path' />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

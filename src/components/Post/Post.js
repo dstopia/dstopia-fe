@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 
@@ -7,38 +7,42 @@ export default function Post() {
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState(0)
     
-    // data will be fetched from url api in the future
-    const data = [
-        {
-            id:1,
-            username:'Thomas alfa Edison',
-            img:'https://source.unsplash.com/random/128x128',
-            timeSend: '11:06 AM Today',
-            msg: 'likes comments and subscribe'
-        },
-        {
-            id:2,
-            username:'Thomas alfa Edison',
-            img:'https://source.unsplash.com/random/128x128',
-            timeSend: '11:06 AM Today',
-            msg: 'likes comments and subscribe'
-        },
-        {
-            id:3,
-            username:'Thomas alfa Edison',
-            img:'https://source.unsplash.com/random/128x128',
-            timeSend: '11:06 AM Today',
-            msg: 'likes comments and subscribe'
-        }
-    ]
-    
+    const getComments = useMemo(() => {
+        
+        // data will be fetched from url api in the future
+        const data = [
+            {
+                id:1,
+                username:'Thomas alfa Edison',
+                img:'https://source.unsplash.com/random/128x128',
+                timeSend: '11:06 AM Today',
+                msg: 'likes comments and subscribe'
+            },
+            {
+                id:2,
+                username:'Thomas alfa Edison',
+                img:'https://source.unsplash.com/random/128x128',
+                timeSend: '11:06 AM Today',
+                msg: 'likes comments and subscribe'
+            },
+            {
+                id:3,
+                username:'Thomas alfa Edison',
+                img:'https://source.unsplash.com/random/128x128',
+                timeSend: '11:06 AM Today',
+                msg: 'likes comments and subscribe'
+            }
+        ]
+        return data
+    }, [])
+
     const handleLikes = () => {
         let like = likes +1
         setLikes(like)
     }
     useEffect(()=>{
-        setComments(data)
-    },[comments])
+        setComments(getComments)
+    },[getComments])
 
     return (
         <Router>
@@ -102,7 +106,7 @@ export default function Post() {
                 </div>
                 {/* /.card-body */}
                 <div className='card-footer card-comments'>
-                   { comments && comments.map(comment => <PostComment comment={comment}/>)}
+                   { comments && comments.map(comment => <PostComment key={comment.id} comment={comment}/>)}
                     {/* /.card-comment */}
                 </div>
                 {/* /.card-footer */}

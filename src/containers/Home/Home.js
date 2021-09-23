@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import './Home.css'
+
 /** Components */
 import ChatsBody from '../../components/Chats/ChatsBody'
 import Journey from '../Pages/Journey/Journey'
@@ -39,12 +41,6 @@ function Home() {
 function Lobby() {
     return (
         <div className='row'>
-            <div className='col-lg-5 overflow-auto'>
-                <Post />
-                <PostClosed />
-                <PostClosed />
-                <PostClosed />
-            </div>
             <div className='col-lg-7'>
                 <Map />
                 <div className='card m-3'>
@@ -61,6 +57,16 @@ function Lobby() {
                     <div className='card-header'>title</div>
                     <div className='card-body'>Something here</div>
                     <div className='card-footer'>footer</div>
+                </div>
+            </div>
+            <div className='col-lg-5 overflow-auto'>
+                <div className='post-wrapper overflow-auto'>
+                    <Post />
+                    <Post />
+                    <Post />
+                    <PostClosed />
+                    <PostClosed />
+                    <PostClosed />
                 </div>
             </div>
         </div>

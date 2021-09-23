@@ -26,7 +26,7 @@ export default function SidebarList() {
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon far fa-map' />
                     <p>Journey</p>
                 </Link>
             </li>
@@ -72,20 +72,20 @@ export default function SidebarList() {
                 </Link>
                 <ul className='nav nav-treeview'>
                     <li className='nav-item'>
-                        <Link href='mailbox/mailbox.html' className='nav-link'>
+                        <Link to='#' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Inbox</p>
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link href='mailbox/compose.html' className='nav-link'>
+                        <Link to='#' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Compose</p>
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link
-                            href='mailbox/read-mail.html'
+                            to='#'
                             className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Read</p>
