@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Signin.css";
+import "./SignIn.css";
 
 export default function SignIn() {
   const [input, setInput] = useState({
@@ -50,7 +50,7 @@ export default function SignIn() {
                 onChange={handleChange}
               />
             </div>
-            <a href="#" className=" d-block mb-4 text-end small">
+            <a href="" className=" d-block mb-4 text-end small">
               Forgot password?
             </a>
             <button
@@ -69,7 +69,7 @@ export default function SignIn() {
               <span className="ml-3">Sign in with Twitter</span>
             </button>
             <p className="small text-center">
-              Don't have an account yet? <a href="#">Create account</a>
+              Don't have an account yet? <a href="">Create account</a>
             </p>
           </form>
         </div>
@@ -77,7 +77,7 @@ export default function SignIn() {
           <img
             className="img-fluid image"
             src="https://source.unsplash.com/m2Wd_bTUSGw/640x958"
-            alt="photo for login page"
+            alt="login page"
           ></img>
         </div>
       </div>
