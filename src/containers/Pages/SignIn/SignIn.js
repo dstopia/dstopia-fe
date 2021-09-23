@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Signin.css";
 
-export default function Login() {
+export default function SignIn() {
   const [input, setInput] = useState({
     email: "",
     password: "",
