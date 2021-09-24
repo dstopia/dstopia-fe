@@ -11,7 +11,7 @@ const rootReducer = (state = globalState, action) => {
         case 'GREET_USER':
             return {
                 ...globalState,
-                user: `Hello ${state.user}`
+                user: `Hello ${state.user}`,
             }
         default:
             return state

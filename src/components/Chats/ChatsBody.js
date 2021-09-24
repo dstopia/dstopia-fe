@@ -71,7 +71,10 @@ export default function ChatsBody() {
             <div className='card-body'>
                 {/* Conversations are loaded here */}
                 <div className='direct-chat-messages'>
-                    {chats && chats.map((chat) => <Chats key={chat.id} chat={chat} />)}
+                    {chats &&
+                        chats.map((chat) => (
+                            <Chats key={chat.id} chat={chat} />
+                        ))}
                 </div>
                 {/*/.direct-chat-messages*/}
                 {/* Contacts are loaded here */}

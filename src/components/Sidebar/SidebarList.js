@@ -84,9 +84,7 @@ export default function SidebarList() {
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link
-                            to='#'
-                            className='nav-link'>
+                        <Link to='#' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Read</p>
                         </Link>

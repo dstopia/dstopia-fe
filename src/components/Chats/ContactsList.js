@@ -1,6 +1,6 @@
-import {BrowserRouter as Router, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
-export default function ContactsList () {
+export default function ContactsList() {
     return (
         <Router>
             <li>
@@ -25,6 +25,6 @@ export default function ContactsList () {
                 </Link>
             </li>
         </Router>
-            /* End Contact Item */
-        )
+        /* End Contact Item */
+    )
 }

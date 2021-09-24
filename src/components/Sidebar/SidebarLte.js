@@ -8,20 +8,17 @@ export default function SidebarLte() {
             {/* Sidebar */}
             <div className='sidebar' id='home-sidebar'>
                 {/* Sidebar user panel (optional) */}
-                <div className='user-panel mt-3 pb-3 mb-3 d-flex'>
-                    <div className='image'>
-                        <img
-                            src='https://source.unsplash.com/random/160x160'
-                            className='img-circle elevation-2'
-                            alt='not found'
-                        />
-                    </div>
-                    <div className='info'>
-                        <Link to='/' className='d-block'>
-                          Dstopia
-                        </Link>
-                    </div>
-                </div>
+                <Link to='/' className='brand-link'>
+                    <img
+                        src='https://source.unsplash.com/random/40x40'
+                        className='img-circle elevation-2'
+                        alt='not found'
+                    />
+                    <span className='brand-text font-weight-light ms-3'>
+                        Dstopia
+                    </span>
+                </Link>
+
                 {/* SidebarSearch Form */}
                 <div className='form-inline'>
                     <div className='input-group' data-widget='sidebar-search'>
@@ -72,7 +69,7 @@ export default function SidebarLte() {
                         data-widget='treeview'
                         role='menu'
                         data-accordion='false'>
-                       <SidebarList />
+                        <SidebarList />
                     </ul>
                 </nav>
                 {/* /.sidebar-menu */}

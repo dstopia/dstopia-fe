@@ -1,48 +1,45 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
-
 export default function Post() {
-    
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState(0)
-    
+
     const getComments = useMemo(() => {
-        
         // data will be fetched from url api in the future
         const data = [
             {
-                id:1,
-                username:'Thomas alfa Edison',
-                img:'https://source.unsplash.com/random/128x128',
+                id: 1,
+                username: 'Thomas alfa Edison',
+                img: 'https://source.unsplash.com/random/128x128',
                 timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe'
+                msg: 'likes comments and subscribe',
             },
             {
-                id:2,
-                username:'Thomas alfa Edison',
-                img:'https://source.unsplash.com/random/128x128',
+                id: 2,
+                username: 'Thomas alfa Edison',
+                img: 'https://source.unsplash.com/random/128x128',
                 timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe'
+                msg: 'likes comments and subscribe',
             },
             {
-                id:3,
-                username:'Thomas alfa Edison',
-                img:'https://source.unsplash.com/random/128x128',
+                id: 3,
+                username: 'Thomas alfa Edison',
+                img: 'https://source.unsplash.com/random/128x128',
                 timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe'
-            }
+                msg: 'likes comments and subscribe',
+            },
         ]
         return data
     }, [])
 
     const handleLikes = () => {
-        let like = likes +1
+        let like = likes + 1
         setLikes(like)
     }
-    useEffect(()=>{
+    useEffect(() => {
         setComments(getComments)
-    },[getComments])
+    }, [getComments])
 
     return (
         <Router>
@@ -97,7 +94,10 @@ export default function Post() {
                     <button type='button' className='btn btn-default btn-sm'>
                         <i className='fas fa-share' /> Share
                     </button>
-                    <button type='button' className='btn btn-default btn-sm' onClick={handleLikes}>
+                    <button
+                        type='button'
+                        className='btn btn-default btn-sm'
+                        onClick={handleLikes}>
                         <i className='far fa-thumbs-up' /> Like
                     </button>
                     <span className='float-right text-muted'>
@@ -106,7 +106,10 @@ export default function Post() {
                 </div>
                 {/* /.card-body */}
                 <div className='card-footer card-comments'>
-                   { comments && comments.map(comment => <PostComment key={comment.id} comment={comment}/>)}
+                    {comments &&
+                        comments.map((comment) => (
+                            <PostComment key={comment.id} comment={comment} />
+                        ))}
                     {/* /.card-comment */}
                 </div>
                 {/* /.card-footer */}
@@ -133,7 +136,7 @@ export default function Post() {
     )
 }
 
-const PostComment = ({comment}) => {
+const PostComment = ({ comment }) => {
     return (
         <div className='card-comment' key={comment.id}>
             {/* User image */}
@@ -150,7 +153,7 @@ const PostComment = ({comment}) => {
                     </span>
                 </span>
                 {/* /.username */}
-               {comment.msg}
+                {comment.msg}
             </div>
             {/* /.comment-text */}
         </div>
