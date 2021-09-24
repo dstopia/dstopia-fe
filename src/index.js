@@ -19,12 +19,12 @@ import 'admin-lte/dist/css/adminlte.min.css'
 import 'admin-lte/dist/js/adminlte.min.js'
 
 /** Components */
-import Home from './containers/Home/Home.js'
+import App from './containers/App/App.js'
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Home />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
