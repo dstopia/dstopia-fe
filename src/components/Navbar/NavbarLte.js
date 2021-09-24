@@ -15,7 +15,7 @@ export default function NavbarLte() {
                         <i className='fas fa-bars' />
                     </Link>
                 </li>
-                <li className='nav-item d-none d-sm-inline-block'>
+                {/* <li className='nav-item d-none d-sm-inline-block'>
                     <Link to='/' className='nav-link'>
                         Home
                     </Link>
@@ -24,7 +24,7 @@ export default function NavbarLte() {
                     <Link to='/' className='nav-link'>
                         Contact
                     </Link>
-                </li>
+                </li> */}
             </ul>
             {/* Right navbar links */}
             <ul className='navbar-nav ml-auto'>

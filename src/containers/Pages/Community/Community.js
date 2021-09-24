@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './Community.css'
+// import './Community.css'
 
 const Community = () => {
     return (

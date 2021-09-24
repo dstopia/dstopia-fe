@@ -26,37 +26,37 @@ export default function SidebarList() {
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-map' />
+                    <i className='nav-icon fas fa-compass' />
                     <p>Journey</p>
                 </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon fas fa-book' />
                     <p>Category</p>
                 </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon fas fa-globe' />
                     <p>Community</p>
                 </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon fas fa-image' />
                     <p>Gallery</p>
                 </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon fas fa-sign' />
                     <p>Tips &amp; Tricks</p>
                 </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>
-                    <i className='nav-icon far fa-image' />
+                    <i className='nav-icon fas fa-headset' />
                     <p>Contacts Us</p>
                 </Link>
             </li>

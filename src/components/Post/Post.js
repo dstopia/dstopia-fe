@@ -1,46 +1,19 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
-export default function Post() {
-    const [comments, setComments] = useState([])
-    const [likes, setLikes] = useState(0)
-
-    const getComments = useMemo(() => {
-        // data will be fetched from url api in the future
-        const data = [
-            {
-                id: 1,
-                username: 'Thomas alfa Edison',
-                img: 'https://source.unsplash.com/random/128x128',
-                timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe',
-            },
-            {
-                id: 2,
-                username: 'Thomas alfa Edison',
-                img: 'https://source.unsplash.com/random/128x128',
-                timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe',
-            },
-            {
-                id: 3,
-                username: 'Thomas alfa Edison',
-                img: 'https://source.unsplash.com/random/128x128',
-                timeSend: '11:06 AM Today',
-                msg: 'likes comments and subscribe',
-            },
-        ]
-        return data
-    }, [])
+export default function Post({ post }) {
+    const [likes, setLikes] = useState(post.isLiked)
+    const [likeCount, setLikeCount] = useState(0)
 
     const handleLikes = () => {
-        let like = likes + 1
-        setLikes(like)
+        if (likes) {
+            setLikes(false)
+            setLikeCount(0)
+        } else {
+            setLikes(true)
+            setLikeCount(1)
+        }
     }
-    useEffect(() => {
-        setComments(getComments)
-    }, [getComments])
-
     return (
         <Router>
             <div className='card card-widget m-3'>
@@ -52,10 +25,10 @@ export default function Post() {
                             alt='Not found'
                         />
                         <span className='username'>
-                            <Link to='/'>Jonathan Burke Jr.</Link>
+                            <Link to='/'>{post.username}</Link>
                         </span>
                         <span className='description'>
-                            Shared publicly - 7:30 PM Today
+                            Shared publicly - {post.timeSend}
                         </span>
                     </div>
                     {/* /.user-block */}
@@ -88,26 +61,40 @@ export default function Post() {
                         src='https://source.unsplash.com/random/1254x836'
                         alt='Not Found'
                     />
-                    <p>
-                        I took this photo this morning. What do you guys think?
-                    </p>
-                    <button type='button' className='btn btn-default btn-sm'>
-                        <i className='fas fa-share' /> Share
-                    </button>
+                    <p>{post.caption}</p>
                     <button
                         type='button'
                         className='btn btn-default btn-sm'
                         onClick={handleLikes}>
-                        <i className='far fa-thumbs-up' /> Like
+                        {likes ? (
+                            <i className='fas fa-heart' />
+                        ) : (
+                            <i className='far fa-heart' />
+                        )}
                     </button>
+                    <button
+                        type='button'
+                        className='btn btn-default btn-sm'
+                        data-bs-toggle='collapse'
+                        data-bs-target={`#${post.id}`}
+                        aria-expanded='false'
+                        aria-controls='commentArea'>
+                        <i className='far fa-comment' />
+                    </button>
+                    <button type='button' className='btn btn-default btn-sm'>
+                        <i className='fas fa-share' />
+                    </button>
+
                     <span className='float-right text-muted'>
-                        {likes} likes - {comments.length} comments
+                        {likeCount} likes - {post.comment.length} comments
                     </span>
                 </div>
                 {/* /.card-body */}
-                <div className='card-footer card-comments'>
-                    {comments &&
-                        comments.map((comment) => (
+                <div
+                    className='card-footer card-comments collapse'
+                    id={post.id}>
+                    {post.comment &&
+                        post.comment.map((comment) => (
                             <PostComment key={comment.id} comment={comment} />
                         ))}
                     {/* /.card-comment */}

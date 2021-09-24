@@ -10,8 +10,9 @@ export default function SidebarLte() {
                 {/* Sidebar user panel (optional) */}
                 <Link to='/' className='brand-link'>
                     <img
+                        // src='/male.png'
                         src='https://source.unsplash.com/random/40x40'
-                        className='img-circle elevation-2'
+                        className='img-circle elevation-2 img-fluid'
                         alt='not found'
                     />
                     <span className='brand-text font-weight-light ms-3'>
