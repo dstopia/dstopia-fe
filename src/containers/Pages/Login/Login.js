@@ -36,12 +36,13 @@ export default function SignIn() {
                     <form
                         className='w-75 p-4 mx-auto shadow rounded'
                         onSubmit={handleSubmit}>
-                        <h3 className='mb-5 text-center'>Login to Dstopia!</h3>
+                        <h3 className='mb-4 text-center'>Login to Dstopia!</h3>
+                        <hr className='mb-3'/>
                         <div className='mb-3'>
                             <label
                                 htmlFor='username'
                                 className='form-label fw-normal'>
-                                Email or Username
+                                Username or Email
                             </label>
                             <input
                                 type='text'

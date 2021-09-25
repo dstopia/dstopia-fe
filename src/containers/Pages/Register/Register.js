@@ -74,6 +74,17 @@ const Register = () => {
                         onChange={handleChange}
                     />
                 </div>
+                <div className='mb-3'>
+                    <label htmlFor='confirm_password' className='form-label'>
+                        Confirm Password
+                    </label>
+                    <input
+                        type='password'
+                        className='form-control'
+                        id='confirm_password'
+                        onChange={handleChange}
+                    />
+                </div>
                 <div className='mb-3 form-check'>
                     <input
                         type='checkbox'
