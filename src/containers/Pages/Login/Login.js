@@ -4,7 +4,7 @@ import './Login.css'
 
 export default function SignIn() {
     const [input, setInput] = useState({
-        email: '',
+        username: '',
         password: '',
     })
 
@@ -18,7 +18,7 @@ export default function SignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-       
+
         console.log(input)
         console.log(e.target)
     }
@@ -47,7 +47,6 @@ export default function SignIn() {
                                 type='text'
                                 className='form-control'
                                 id='username'
-                                name='username'
                                 placeholder='Enter your username'
                                 onChange={handleChange}
                             />
@@ -62,7 +61,6 @@ export default function SignIn() {
                                 type='password'
                                 className='form-control'
                                 id='password'
-                                name='password'
                                 placeholder='Enter your email'
                                 onChange={handleChange}
                             />
@@ -95,7 +93,7 @@ export default function SignIn() {
                         </div>
                         <p className='small text-center'>
                             Don't have an account yet?
-                            <Link to='#'> Create account</Link>
+                            <Link to='/register'> Create account</Link>
                         </p>
                     </form>
                 </div>

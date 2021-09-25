@@ -99,7 +99,7 @@ export default function NavbarLte() {
                         className='nav-link'
                         data-widget='control-sidebar'
                         data-slide='true'
-                        to='/'
+                        to='/login'
                         role='button'>
                         <i className='fas fa-user'></i>
                     </Link>

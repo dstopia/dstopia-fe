@@ -77,6 +77,7 @@ const Home = () => {
         setPost(getPost)
     }, [getPost])
 
+    console.log({ post })
     return (
         <div className='row'>
             <div className='col-lg-7'>

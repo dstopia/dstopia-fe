@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 /** Global Store */
-import store from './redux/globalStore.js'
+import store from './functions/redux/globalStore.js'
 
 /** Font Awesome */
 import '@fortawesome/fontawesome-free/css/all.min.css'
