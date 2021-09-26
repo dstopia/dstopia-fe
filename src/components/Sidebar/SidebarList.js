@@ -92,6 +92,14 @@ export default function SidebarList() {
                 </ul>
             </li>
             {/* Mail end */}
+            
+            {/* Development Page Only */}
+              <li className='nav-item'>
+                <Link to='/user-list' className='nav-link'>
+                    <i className='nav-icon fas fa-user' />
+                    <p>DEV - User List</p>
+                </Link>
+            </li>
         </Fragment>
     )
 }
