@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState } from 'react'
 
 import Chats from './Chats.js'
 import ContactsList from './ContactsList.js'
@@ -6,33 +6,24 @@ import ContactsList from './ContactsList.js'
 // data will be fetched from api in the future
 
 export default function ChatsBody() {
-    const [chats, setChats] = useState([])
-
-    const chatsData = useMemo(() => {
-        const data = [
-            {
-                id: 1,
-                username: 'Alexander',
-                msg: 'Hello everyone, how are you doing?',
-                timeSend: '12:17 AM Today',
-                position: 'left',
-                thumb_img: 'https://source.unsplash.com/random/128x128',
-            },
-            {
-                id: 2,
-                username: 'Lorem Ispum',
-                msg: 'Hello everyone, how are you doing?',
-                timeSend: '12:30 AM Today',
-                position: 'right',
-                thumb_img: 'https://source.unsplash.com/random/128x128',
-            },
-        ]
-        return data
-    }, [])
-
-    useEffect(() => {
-        setChats(chatsData)
-    }, [chatsData])
+    const [chats, setChats] = useState([
+        {
+            id: 1,
+            username: 'Alexander',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:17 AM Today',
+            position: 'left',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+    ])
 
     return (
         <div className='card direct-chat direct-chat-primary m-3'>

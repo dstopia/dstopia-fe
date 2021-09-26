@@ -22,10 +22,10 @@ const App = () => {
                 <div className='wrapper'>
                     <Loader />
                     {/* Register Page */}
-                    <Route path='/register' exact component={Register} />
+                    <Route path='/register' component={Register} />
 
                     {/* Login Page */}
-                    <Route path='/login' exact component={Login} />
+                    <Route path='/login' component={Login} />
 
                     {/* Home Page */}
                     <Route exact path='/'>
