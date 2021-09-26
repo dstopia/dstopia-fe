@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main, .col-lg, .row,.content-header, .container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 25rem;
+}
