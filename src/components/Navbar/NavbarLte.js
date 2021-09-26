@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function NavbarLte() {
     return (
-        <nav className='main-header navbar navbar-expand navbar-primary navbar-dark'>
+        <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
             {/* Left navbar links */}
             <ul className='navbar-nav'>
                 <li className='nav-item'>
@@ -12,19 +12,19 @@ export default function NavbarLte() {
                         data-widget='pushmenu'
                         to='#'
                         role='button'>
-                        <i className='fas fa-bars' />
-                    </Link>
-                </li>
-                {/* <li className='nav-item d-none d-sm-inline-block'>
-                    <Link to='/' className='nav-link'>
-                        Home
+                        <i className='fas fa-angle-right' />
                     </Link>
                 </li>
                 <li className='nav-item d-none d-sm-inline-block'>
                     <Link to='/' className='nav-link'>
+                        Home
+                    </Link>
+                </li>
+                {/* <li className='nav-item d-none d-sm-inline-block'>
+                    <Link to='/' className='nav-link'>
                         Contact
                     </Link>
-                </li> */}
+                </li>  */}
             </ul>
             {/* Right navbar links */}
             <ul className='navbar-nav ml-auto'>

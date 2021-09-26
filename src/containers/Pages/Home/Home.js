@@ -10,25 +10,36 @@ const Home = () => {
     const [post, setPost] = useState([])
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/post`)
-        .then((res)=>{
+        axios.get(`${BASE_URL}/post`).then((res) => {
             setPost(res.data)
         })
     }, [post])
-    
+
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-7'>
+                <div className='col-md-8'>
                     <Map />
-                </div>
-                <div className='col-md-5'>
                     {post &&
                         post.map((pst) => <Post key={pst._id} post={pst} />)}
+                </div>
+                <div className='col-md-4'>
+                    <Card />
+                    <Card />
+                    <Card />
                 </div>
             </div>
         </div>
     )
 }
 
+const Card = () => {
+    return (
+        <div className='card shadow m-3'>
+            <div className='card-header'>Header</div>
+            <div className='card-body'>Body</div>
+            <div className='card-footer'>Footer</div>
+        </div>
+    )
+}
 export default Home
