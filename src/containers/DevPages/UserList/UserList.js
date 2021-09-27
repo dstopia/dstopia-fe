@@ -1,11 +1,17 @@
-import { useState }  from 'react'
-import {Link} from 'react-router-dom'
-
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import useFetch from '../../../functions/hooks/useFetch'
+import BASE_URL from '../../../config'
 const UserList = () => {
+
     return (
         <div className='container'>
-            <Link to='/' className='btn btn-info'>Home</Link>
-            <Link to='/register' className='btn btn-info'>Register</Link>
+            <Link to='/' className='btn btn-info'>
+                Home
+            </Link>
+            <Link to='/register' className='btn btn-info'>
+                Register
+            </Link>
             <div className='row'>
                 <div className='col-md-4 col-lg-3 m-3'>
                     <div className='card'>
@@ -22,7 +28,7 @@ const UserList = () => {
                 </div>
             </div>
         </div>
-        )
+    )
 }
 
 export default UserList
