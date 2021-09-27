@@ -104,6 +104,11 @@ export default function NavbarLte() {
                         <i className='fas fa-user'></i>
                     </Link>
                 </li>
+                <li className='nav-item'>
+                    <Link className='nav-link' to='/login'>
+                        <span className='badge rounded-pill bg-danger bg-gradient'>LogIn / SignUp</span>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
