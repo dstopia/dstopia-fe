@@ -1,0 +1,27 @@
+.max {
+    min-width: 400px;
+}
+.h-a {
+    height: max-content;
+}
+.bold {
+    font-weight: 600;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.side-fixed {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 50px; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.ml {
+    margin-left: 25%;
+}

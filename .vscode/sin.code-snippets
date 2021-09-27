@@ -27,5 +27,9 @@
 				"\t)",
 				"}"
 		]
+	},
+	"border danger": {
+		"prefix": "bd", 
+		"body": ["'border border-danger $1'"]
 	}
 }
