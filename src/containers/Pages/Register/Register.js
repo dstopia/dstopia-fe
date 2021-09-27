@@ -42,7 +42,7 @@ const Register = () => {
     return (
         <div className='container '>
             <form
-                className='m-5 p-3 shadow border rounded'
+                className='m-2 m-lg-5 p-3 shadow border rounded'
                 onSubmit={handleSubmit}>
                 <h4 className='text-center'>Register form</h4>
                 <hr />
@@ -89,32 +89,38 @@ const Register = () => {
                                 We'll never share your email with anyone else.
                             </div>
                         </div>
-                        <div className='mb-3'>
-                            <label htmlFor='password' className='form-label'>
-                                Password
-                            </label>
-                            <input
-                                type='password'
-                                className='form-control'
-                                id='password'
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className='mb-3'>
-                            <label
-                                htmlFor='confirm_password'
-                                className='form-label'>
-                                Confirm Password
-                            </label>
-                            <input
-                                type='password'
-                                className='form-control'
-                                id='confirm_password'
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='mb-3'>
+                                    <label htmlFor='password' className='form-label'>
+                                        Password
+                                    </label>
+                                    <input
+                                        type='password'
+                                        className='form-control'
+                                        id='password'
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div className='mb-3'>
+                                    <label
+                                        htmlFor='confirm_password'
+                                        className='form-label'>
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        type='password'
+                                        className='form-control'
+                                        id='confirm_password'
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                    </div>
                     </div>
                     <div className='col-lg-6'>
                         <div className='mb-3'>
