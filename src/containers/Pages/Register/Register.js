@@ -117,7 +117,7 @@ const Register = () => {
                                         <input
                                             className='form-check-input'
                                             type='radio'
-                                            name='exampleRadios'
+                                            name='gender'
                                             id='exampleRadios1'
                                             defaultValue='option1'
                                             defaultChecked
@@ -134,7 +134,7 @@ const Register = () => {
                                         <input
                                             className='form-check-input'
                                             type='radio'
-                                            name='exampleRadios2'
+                                            name='gender'
                                             id='exampleRadios2'
                                         />
                                         <label
@@ -149,7 +149,7 @@ const Register = () => {
                                         <input
                                             className='form-check-input'
                                             type='radio'
-                                            name='exampleRadios3'
+                                            name='gender'
                                             id='exampleRadios3'
                                             defaultValue='option3'
                                         />
