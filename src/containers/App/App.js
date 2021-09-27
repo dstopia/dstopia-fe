@@ -29,7 +29,7 @@ const App = () => {
 
                     {/* Login Page */}
                     <Route path='/login' component={Login} />
-                    
+
                     {/* User List Page */}
                     <Route path='/user-list' component={UserList} />
 
@@ -79,7 +79,7 @@ const App = () => {
                     </Route>
 
                     {/* Router not found */}
-                    {/* <Route path='/*' exact component={PageNotFound} /> */}
+                    {/* <Route path='*' exact component={PageNotFound} /> */}
                 </div>
             </Switch>
         </Router>
