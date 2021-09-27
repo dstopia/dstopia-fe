@@ -10,6 +10,9 @@ import Register from '../Pages/Register/Register'
 import Journey from '../Pages/Journey/Journey'
 import Community from '../Pages/Community/Community'
 
+/** Development Pages only */
+import UserList from '../DevPages/UserList/UserList'
+
 /** Components */
 import NavbarLte from '../../components/Navbar/NavbarLte'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
@@ -26,6 +29,9 @@ const App = () => {
 
                     {/* Login Page */}
                     <Route path='/login' component={Login} />
+                    
+                    {/* User List Page */}
+                    <Route path='/user-list' component={UserList} />
 
                     {/* Home Page */}
                     <Route exact path='/'>
