@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function NavbarLte() {
+    const [arrow, setArrow] = useState(false)
+
+    const handleArrow = () => {
+        arrow ? setArrow(false) : setArrow(true)
+        console.log(arrow)
+    }
+
     return (
         <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
             {/* Left navbar links */}
@@ -10,9 +17,14 @@ export default function NavbarLte() {
                     <Link
                         className='nav-link'
                         data-widget='pushmenu'
+                        onClick={handleArrow}
                         to='#'
                         role='button'>
-                        <i className='fas fa-angle-right' />
+                        {arrow ? (
+                            <i className='fas fa-angle-left' />
+                        ) : (
+                            <i className='fas fa-angle-right' />
+                        )}
                     </Link>
                 </li>
                 <li className='nav-item d-none d-sm-inline-block'>
@@ -106,7 +118,9 @@ export default function NavbarLte() {
                 </li>
                 <li className='nav-item'>
                     <Link className='nav-link' to='/login'>
-                        <span className='badge rounded-pill bg-danger bg-gradient'>LogIn / SignUp</span>
+                        <span className='badge rounded-pill bg-danger shadow-sm bg-gradient fw-light'>
+                            LogIn / SignUp
+                        </span>
                     </Link>
                 </li>
             </ul>
