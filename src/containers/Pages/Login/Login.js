@@ -1,5 +1,7 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import BASE_URL from '../../../config'
 import './Login.css'
 
 export default function SignIn() {
@@ -7,6 +9,7 @@ export default function SignIn() {
         username: '',
         password: '',
     })
+    const [error, setError] = useState({})
 
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -18,9 +21,17 @@ export default function SignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        console.log(input)
-        console.log(e.target)
+        axios
+            .post(`${BASE_URL}/user/login`, input)
+            .then((user) => {
+                setError({})
+                console.log(user.data)
+            })
+            .catch((err) => {
+                if (err) {
+                    setError(err.response.data)
+                }
+            })
     }
 
     return (
@@ -37,7 +48,12 @@ export default function SignIn() {
                         className='w-75 p-4 mx-auto shadow rounded'
                         onSubmit={handleSubmit}>
                         <h3 className='mb-4 text-center'>Login to Dstopia!</h3>
-                        <hr className='mb-3'/>
+                        {error.msg && (
+                            <div className='alert alert-danger' role='alert'>
+                                {error.msg}
+                            </div>
+                        )}
+                        <hr className='mb-3' />
                         <div className='mb-3'>
                             <label
                                 htmlFor='username'

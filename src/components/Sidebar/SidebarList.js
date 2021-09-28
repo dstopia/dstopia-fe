@@ -16,7 +16,7 @@ export default function SidebarList() {
                 </Link>
                 <ul className='nav nav-treeview'>
                     <li className='nav-item'>
-                        <Link to='/' className='nav-link'>
+                        <Link to='/setting' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Profile Settings</p>
                         </Link>

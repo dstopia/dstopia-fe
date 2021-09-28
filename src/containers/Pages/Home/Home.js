@@ -4,6 +4,7 @@ import Map from '../../../components/Map/Map'
 import Post from '../../../components/Post/Post'
 import BASE_URL from '../../../config'
 import axios from 'axios'
+import ProfileCard from '../../../components/Profile/ProfileCard'
 // import PostClosed from '../../../components/Post/PostClosed'
 
 const Home = () => {
@@ -16,20 +17,15 @@ const Home = () => {
     }, [post])
 
     return (
-        <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-md-8'>
-                    <div className='d-none d-md-block'>
-                        <Map />
-                    </div>
-                    {post &&
-                        post.map((pst) => <Post key={pst._id} post={pst} />)}
+        <div className='row'>
+            <div className='col-md-8'>
+                <div className='d-none d-md-block'>
+                    <Map />
                 </div>
-                <div className='col-md-4'>
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+                {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
+            </div>
+            <div className='col-md-4 d-none d-md-block'>
+                <ProfileCard />
             </div>
         </div>
     )

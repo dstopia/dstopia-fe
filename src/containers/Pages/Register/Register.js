@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 const Register = () => {
     const [input, setInput] = useState({
         username: '',
+        birthday: '',
+        gender: '',
         email: '',
         password: '',
         confirm_password: '',
@@ -14,18 +16,19 @@ const Register = () => {
     const [error, setError] = useState([])
 
     const handleChange = (e) => {
-        const { id, value } = e.target
+        const { name, value } = e.target
+        // handle radio button please...
         setInput((prevState) => ({
             ...prevState,
-            [id]: value,
+            [name]: value,
         }))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setisPending(true)
-
         // Save user to server
+
         axios
             .post(`${BASE_URL}/user`, input)
             .then((res) => {
@@ -69,6 +72,7 @@ const Register = () => {
                                 type='text'
                                 className='form-control'
                                 id='username'
+                                name='username'
                                 onChange={handleChange}
                                 required
                             />
@@ -81,6 +85,7 @@ const Register = () => {
                                 type='email'
                                 className='form-control'
                                 id='email'
+                                name='email'
                                 onChange={handleChange}
                                 aria-describedby='emailHelp'
                                 required
@@ -92,13 +97,16 @@ const Register = () => {
                         <div className='row'>
                             <div className='col'>
                                 <div className='mb-3'>
-                                    <label htmlFor='password' className='form-label'>
+                                    <label
+                                        htmlFor='password'
+                                        className='form-label'>
                                         Password
                                     </label>
                                     <input
                                         type='password'
                                         className='form-control'
                                         id='password'
+                                        name='password'
                                         onChange={handleChange}
                                         required
                                     />
@@ -115,12 +123,13 @@ const Register = () => {
                                         type='password'
                                         className='form-control'
                                         id='confirm_password'
+                                        name='confirm_password'
                                         onChange={handleChange}
                                         required
                                     />
                                 </div>
                             </div>
-                    </div>
+                        </div>
                     </div>
                     <div className='col-lg-6'>
                         <div className='mb-3'>
@@ -131,6 +140,7 @@ const Register = () => {
                                 type='date'
                                 className='form-control'
                                 id='birthday'
+                                name='birthday'
                                 onChange={handleChange}
                                 required
                             />

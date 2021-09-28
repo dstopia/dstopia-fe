@@ -41,7 +41,7 @@ export default function SidebarLte() {
                                 <div className='search-title'>
                                     <strong className='text-light' />N
                                     <strong className='text-light' />o
-                                    <strong className='text-light' />{' '}
+                                    <strong className='text-light' />
                                     <strong className='text-light' />e
                                     <strong className='text-light' />l
                                     <strong className='text-light' />e
@@ -49,7 +49,7 @@ export default function SidebarLte() {
                                     <strong className='text-light' />e
                                     <strong className='text-light' />n
                                     <strong className='text-light' />t
-                                    <strong className='text-light' />{' '}
+                                    <strong className='text-light' />
                                     <strong className='text-light' />f
                                     <strong className='text-light' />o
                                     <strong className='text-light' />u

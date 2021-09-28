@@ -28,12 +28,12 @@ export default function NavbarLte() {
                 </li>
                 <li className='nav-item'>
                     <Link to='/' className='nav-link'>
-                          <i className='fas fa-home' />
+                        <i className='fas fa-home' />
                     </Link>
                 </li>
                 <li className='nav-item d-md-none'>
                     <Link to='/map' className='nav-link'>
-                          <i className='fas fa-map' />
+                        <i className='fas fa-map' />
                     </Link>
                 </li>
             </ul>
@@ -77,9 +77,7 @@ export default function NavbarLte() {
                 </li>
                 {/* Messages Dropdown Menu */}
                 <li className='nav-item d-none d-sm-inline-block'>
-                    <Link
-                        className='nav-link'
-                        to='/chats'>
+                    <Link className='nav-link' to='/chats'>
                         <i className='far fa-comments' />
                         <span className='badge badge-danger navbar-badge'>
                             3
@@ -104,7 +102,7 @@ export default function NavbarLte() {
                         <i className='fas fa-expand-arrows-alt' />
                     </Link>
                 </li>
-                <li className='nav-item'>
+                <li className='nav-item d-sm-none d-inline-block'>
                     <Link
                         className='nav-link'
                         data-widget='control-sidebar'
