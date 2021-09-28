@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Map() {
     return (
-        <div className='card bg-gradient-primary m-3'>
+        <div className='card bg-gradient-primary m-2 m-md-3 mt-3'>
             <div
                 className='card-header border-0 ui-sortable-handle'
                 style={{ cursor: 'move' }}>

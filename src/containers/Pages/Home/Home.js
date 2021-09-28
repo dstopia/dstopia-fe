@@ -19,7 +19,9 @@ const Home = () => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-8'>
-                    <Map />
+                    <div className='d-none d-md-block'>
+                        <Map />
+                    </div>
                     {post &&
                         post.map((pst) => <Post key={pst._id} post={pst} />)}
                 </div>

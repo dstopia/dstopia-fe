@@ -16,7 +16,7 @@ export default function Post({ post }) {
     }
     return (
         <Router>
-            <div className='card card-widget m-3'>
+            <div className='card card-widget m-2 m-md-3'>
                 <div className='card-header'>
                     <div className='user-block'>
                         <img

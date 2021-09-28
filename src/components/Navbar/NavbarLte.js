@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function NavbarLte() {
+    const [arrow, setArrow] = useState(false)
+
+    const handleArrow = () => {
+        arrow ? setArrow(false) : setArrow(true)
+    }
+
     return (
         <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
             {/* Left navbar links */}
@@ -10,21 +16,26 @@ export default function NavbarLte() {
                     <Link
                         className='nav-link'
                         data-widget='pushmenu'
+                        onClick={handleArrow}
                         to='#'
                         role='button'>
-                        <i className='fas fa-angle-right' />
+                        {arrow ? (
+                            <i className='fas fa-angle-left' />
+                        ) : (
+                            <i className='fas fa-angle-right' />
+                        )}
                     </Link>
                 </li>
-                <li className='nav-item d-none d-sm-inline-block'>
+                <li className='nav-item'>
                     <Link to='/' className='nav-link'>
-                        Home
+                          <i className='fas fa-home' />
                     </Link>
                 </li>
-                {/* <li className='nav-item d-none d-sm-inline-block'>
-                    <Link to='/' className='nav-link'>
-                        Contact
+                <li className='nav-item d-md-none'>
+                    <Link to='/map' className='nav-link'>
+                          <i className='fas fa-map' />
                     </Link>
-                </li>  */}
+                </li>
             </ul>
             {/* Right navbar links */}
             <ul className='navbar-nav ml-auto'>
@@ -65,10 +76,9 @@ export default function NavbarLte() {
                     </div>
                 </li>
                 {/* Messages Dropdown Menu */}
-                <li className='nav-item dropdown'>
+                <li className='nav-item d-none d-sm-inline-block'>
                     <Link
                         className='nav-link'
-                        data-toggle='dropdown'
                         to='/chats'>
                         <i className='far fa-comments' />
                         <span className='badge badge-danger navbar-badge'>
@@ -77,15 +87,15 @@ export default function NavbarLte() {
                     </Link>
                 </li>
                 {/* Notifications Dropdown Menu */}
-                <li className='nav-item dropdown'>
+                {/*<li className='nav-item dropdown'>
                     <Link className='nav-link' data-toggle='dropdown' to='/'>
                         <i className='far fa-bell' />
                         <span className='badge badge-warning navbar-badge'>
                             15
                         </span>
                     </Link>
-                </li>
-                <li className='nav-item'>
+                </li> */}
+                <li className='nav-item d-none d-sm-inline-block'>
                     <Link
                         className='nav-link'
                         data-widget='fullscreen'
@@ -99,9 +109,16 @@ export default function NavbarLte() {
                         className='nav-link'
                         data-widget='control-sidebar'
                         data-slide='true'
-                        to='/login'
+                        to='#'
                         role='button'>
-                        <i className='fas fa-user'></i>
+                        <i className='fas fa-bars'></i>
+                    </Link>
+                </li>
+                <li className='nav-item d-none d-sm-inline-block'>
+                    <Link className='nav-link' to='/login'>
+                        <span className='badge rounded-pill bg-danger shadow-sm bg-gradient fw-light'>
+                            LogIn / SignUp
+                        </span>
                     </Link>
                 </li>
             </ul>
