@@ -9,6 +9,7 @@ import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import Journey from '../Pages/Journey/Journey'
 import Community from '../Pages/Community/Community'
+import SettingPage from '../Pages/SettingPage/SettingPage'
 
 /** Development Pages only */
 import UserList from '../DevPages/UserList/UserList'
@@ -29,7 +30,7 @@ const App = () => {
 
                     {/* Login Page */}
                     <Route path='/login' component={Login} />
-                    
+
                     {/* User List Page */}
                     <Route path='/user-list' component={UserList} />
 
@@ -80,6 +81,9 @@ const App = () => {
 
                     {/* Router not found */}
                     {/* <Route path='/*' exact component={PageNotFound} /> */}
+
+                    {/* Setting Page */}
+                    <Route path='/setting' component={SettingPage} />
                 </div>
             </Switch>
         </Router>

@@ -1,31 +1,39 @@
 import React from 'react'
-import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+    Link,
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useHistory,
+} from 'react-router-dom'
 import './SettingPage.css'
 
 export default function SettingPage() {
+    let history = useHistory()
+    function handleHome() {
+        history.push('/')
+    }
     return (
         <Router>
             <div className='max'>
                 <div
                     className='sticky-top bg-secondary fs-3 d-flex align-items-center px-3'
                     style={{ height: '50px' }}>
-                    <i className='bi bi-sliders h-a bg-secondary'></i>
-                    <div className='h-a bold ml-2'>Setting</div>
+                    <i
+                        className='bi bi-arrow-left-square h-a bg-secondary'
+                        onClick={handleHome}
+                        style={{ cursor: 'pointer' }}></i>
+                    <div className='h-a bold ml-3'>Setting</div>
                 </div>
                 <div>
                     <NavbarSide />
                     <div className='ml'>
                         <Switch>
-                            <Route exact path='/' component={Profile} />
+                            <Route exact path='/setting' component={Profile} />
                             <Route
                                 exact
-                                path='/password'
+                                path='/setting/password'
                                 component={Password}
-                            />
-                            <Route
-                                exact
-                                path='/notification'
-                                component={Notification}
                             />
                         </Switch>
                     </div>
@@ -39,12 +47,12 @@ function NavbarSide() {
     return (
         <div className='px-3  border-end border-secondary side-fixed'>
             <div className='border-bottom border-secondary py-2'>
-                <Link className='link-dark' to='/'>
+                <Link className='link-dark' to='/setting'>
                     Profile
                 </Link>
             </div>
             <div className='border-bottom border-secondary py-2'>
-                <Link className='link-dark' to='/password'>
+                <Link className='link-dark' to='/setting/password'>
                     Password
                 </Link>
             </div>
@@ -54,7 +62,7 @@ function NavbarSide() {
 
 function Profile() {
     return (
-        <div className='p-5'>
+        <div className='px-5 py-2'>
             <div className='d-flex justify-content-center align-items-center'>
                 <img
                     src='/male.png'
@@ -108,7 +116,7 @@ function Profile() {
 
 function Password() {
     return (
-        <div className='p-5'>
+        <div className='px-5 py-2'>
             <form>
                 <div class='mb-3'>
                     <label for='currentpassword' class='form-label'>
