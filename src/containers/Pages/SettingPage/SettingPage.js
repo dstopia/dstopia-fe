@@ -17,10 +17,10 @@ export default function SettingPage() {
         <Router>
             <div className='max'>
                 <div
-                    className='sticky-top bg-secondary fs-3 d-flex align-items-center px-3'
+                    className='sticky-top bg-primary fs-3 d-flex align-items-center px-3'
                     style={{ height: '50px' }}>
                     <i
-                        className='bi bi-arrow-left-square h-a bg-secondary'
+                        className='fas fa-arrow-left'
                         onClick={handleHome}
                         style={{ cursor: 'pointer' }}></i>
                     <div className='h-a bold ml-3'>Setting</div>
@@ -66,9 +66,10 @@ function Profile() {
             <div className='d-flex justify-content-center align-items-center'>
                 <img
                     src='/male.png'
-                    className='img-thumnail rounded-circle'
-                    alt='profile'></img>
-                <i className='bi bi-pencil-square icon'></i>
+                    className='img-thumbnail rounded-circle'
+                    alt='profile'>
+                </img>
+                <i className='far fa-edit icon align-self-end'></i>
             </div>
 
             <form>

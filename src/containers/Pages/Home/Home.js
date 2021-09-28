@@ -18,16 +18,26 @@ const Home = () => {
     }, [post])
 
     return (
-        <div className='row'>
-            <div className='col-md-8'>
-                <div className='d-none d-md-block'>
-                    <Map />
+        <div className='container'>
+            <div className='row'>
+            {/*
+                <div className='col-md-8'>
+                    <div className='d-none d-md-block'>
+                        <Map />
+                    </div>
+                    {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
                 </div>
-                {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
-            </div>
-            <div className='col-md-4 d-none d-md-block'>
-                <ProfileCard />
-                <AboutMeCard />
+                <div className='col-md-4 d-none d-md-block'>
+                    <ProfileCard />
+                    <AboutMeCard />
+                </div>
+            */}
+                <div className='col'>
+                    <div className='d-none d-md-block'>
+                        <Map />
+                    </div>
+                    {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
+                </div>
             </div>
         </div>
     )

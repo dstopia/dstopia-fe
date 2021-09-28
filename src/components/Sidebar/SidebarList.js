@@ -6,23 +6,35 @@ export default function SidebarList() {
         <Fragment>
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
-            <li className='nav-item'>
-                <Link to='#' className='nav-link active'>
-                    <i className='nav-icon fas fa-tachometer-alt' />
-                    <p>
-                        Dashboard
-                        <i className='right fas fa-angle-left' />
-                    </p>
-                </Link>
-                <ul className='nav nav-treeview'>
+               {/* <ul className='nav nav-treeview'>
                     <li className='nav-item'>
                         <Link to='/setting' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
                             <p>Profile Settings</p>
                         </Link>
                     </li>
-                    {/* add some list bellow */}
-                </ul>
+                </ul> */}
+           
+            <li className='nav-item'>
+                <Link to='/' className='nav-link active'>
+                    <i className='nav-icon fas fa-home' />
+                    <p>Home</p>
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to='/map' className='nav-link'>
+                    <i className='nav-icon fas fa-map' />
+                    <p>Map</p>
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to='/dashboard' className='nav-link'>
+                    <i className='nav-icon fas fa-tachometer-alt' />
+                    <p>
+                        Dashboard
+                       {/* <i className='right fas fa-angle-left' /> */}
+                    </p>
+                </Link>
             </li>
             <li className='nav-item'>
                 <Link to='/gallery' className='nav-link'>

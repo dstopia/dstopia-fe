@@ -1,8 +1,12 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import BASE_URL from '../../../config'
+
 import './Login.css'
+
+import { useDispatch } from 'react-redux'
+import { login } from '../../../features/user'
 
 export default function SignIn() {
     const [input, setInput] = useState({
@@ -10,7 +14,9 @@ export default function SignIn() {
         password: '',
     })
     const [error, setError] = useState({})
-
+    
+    const dispatch = useDispatch()
+    
     const handleChange = (e) => {
         const { id, value } = e.target
         setInput((prevState) => ({
@@ -26,6 +32,7 @@ export default function SignIn() {
             .then((user) => {
                 setError({})
                 console.log(user.data)
+                dispatch(login({user.data}))
             })
             .catch((err) => {
                 if (err) {

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import './App.css'
+// import './App.css'
 
 /** Pages */
 import Home from '../Pages/Home/Home'
@@ -10,6 +10,7 @@ import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import Journey from '../Pages/Journey/Journey'
 import Community from '../Pages/Community/Community'
+import Dashboard from '../Pages/Dashboard/Dashboard'
 import SettingPage from '../Pages/SettingPage/SettingPage'
 
 /** Development Pages only */
@@ -20,6 +21,7 @@ import NavbarLte from '../../components/Navbar/NavbarLte'
 import Map from '../../components/Map/Map'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
 import ChatsBody from '../../components/Chats/ChatsBody'
+import Footer from '../../components/Footer/Footer'
 
 const App = () => {
     return (
@@ -42,8 +44,10 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Home />
+                            <Footer />
                         </div>
                     </Route>
+                    
                     {/* Map Page */}
                     <Route exact path='/map'>
                         <NavbarLte />
@@ -86,6 +90,15 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Community />
+                        </div>
+                    </Route>
+                    
+                    {/* Dashboard Page */}
+                    <Route path='/dashboard'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Dashboard />
                         </div>
                     </Route>
 

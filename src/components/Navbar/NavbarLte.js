@@ -12,7 +12,7 @@ export default function NavbarLte() {
         <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
             {/* Left navbar links */}
             <ul className='navbar-nav'>
-                <li className='nav-item'>
+                <li className='nav-item d-none d-sm-inline-block'>
                     <Link
                         className='nav-link'
                         data-widget='pushmenu'
@@ -24,16 +24,6 @@ export default function NavbarLte() {
                         ) : (
                             <i className='fas fa-angle-right' />
                         )}
-                    </Link>
-                </li>
-                <li className='nav-item'>
-                    <Link to='/' className='nav-link'>
-                        <i className='fas fa-home' />
-                    </Link>
-                </li>
-                <li className='nav-item d-md-none'>
-                    <Link to='/map' className='nav-link'>
-                        <i className='fas fa-map' />
                     </Link>
                 </li>
             </ul>
@@ -105,7 +95,7 @@ export default function NavbarLte() {
                 <li className='nav-item d-sm-none d-inline-block'>
                     <Link
                         className='nav-link'
-                        data-widget='control-sidebar'
+                        data-widget='pushmenu'
                         data-slide='true'
                         to='#'
                         role='button'>

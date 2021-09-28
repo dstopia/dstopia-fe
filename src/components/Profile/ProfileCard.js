@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import BASE_URL from '../../config'
 
+/** Redux */
+import { useSelector } from 'react-redux' // access global state
+// import { useDispatch } from 'react-redux' // edit global state
+
 const ProfileCard = () => {
+    
+    const user = useSelector((state)=> state.user.value)
+    /*
     const [user, setUser] = useState({})
 
     useEffect(() => {
@@ -16,7 +23,7 @@ const ProfileCard = () => {
                 console.log(err)
             })
     }, [])
-
+    */
     return (
         <div className='mx-3 pt-3'>
             {/* Profile Image */}
