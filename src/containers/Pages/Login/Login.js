@@ -95,17 +95,17 @@ export default function SignIn() {
                             <button
                                 type='button'
                                 className='btn btn-outline-primary rounded-circle'>
-                                <i className='bi bi-twitter'></i>
+                                <i className='fab fa-twitter'></i>
                             </button>
                             <button
                                 type='button'
                                 className='btn btn-outline-primary rounded-circle'>
-                                <i className='bi bi-facebook'></i>
+                                <i className='fab fa-facebook'></i>
                             </button>
                             <button
                                 type='button'
                                 className='btn btn-outline-primary rounded-circle'>
-                                <i className='bi bi-google'></i>
+                                <i className='fab fa-google'></i>
                             </button>
                         </div>
                         <p className='small text-center'>

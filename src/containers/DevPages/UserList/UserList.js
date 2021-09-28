@@ -1,32 +1,38 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import useFetch from '../../../functions/hooks/useFetch'
+import useFetch from '../../../hooks/useFetch'
 import BASE_URL from '../../../config'
+import ProfileCard from '../../../components/Profile/ProfileCard'
 const UserList = () => {
-
     return (
         <div className='container'>
-            <Link to='/' className='btn btn-info'>
-                Home
-            </Link>
-            <Link to='/register' className='btn btn-info'>
-                Register
-            </Link>
             <div className='row'>
-                <div className='col-md-4 col-lg-3 m-3'>
-                    <div className='card'>
-                        <div className='card-header'>
-                            <p>Card header</p>
-                        </div>
-                        <div className='card-body'>
-                            <p>Card body</p>
-                        </div>
-                        <div className='card-footer'>
-                            <p>Card footer</p>
-                        </div>
-                    </div>
+                <div className='col text-center'>
+                    <Link to='/' className='btn btn-primary m-3 d-block'>
+                        Home
+                    </Link>
+                </div>
+                <div className='col text-center'>
+                    <Link to='/register' className='btn btn-primary m-3 d-block'>
+                        Register
+                    </Link>
                 </div>
             </div>
+            <div className='row'>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </div>
+    )
+}
+const Card = () => {
+    return (
+        <div className='col-md-6 col-lg-4 col-xl-3'>
+            <ProfileCard />
         </div>
     )
 }

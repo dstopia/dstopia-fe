@@ -23,13 +23,91 @@ export default function ChatsBody() {
             position: 'right',
             thumb_img: 'https://source.unsplash.com/random/128x128',
         },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
+        {
+            id: 2,
+            username: 'Lorem Ispum',
+            msg: 'Hello everyone, how are you doing?',
+            timeSend: '12:30 AM Today',
+            position: 'right',
+            thumb_img: 'https://source.unsplash.com/random/128x128',
+        },
     ])
 
     return (
-        <div className='card direct-chat direct-chat-primary m-3'>
-            <div
-                className='card-header ui-sortable-handle'
-                style={{ cursor: 'move' }}>
+        <div className='card direct-chat direct-chat-primary position-absolute m-3 end-0 start-0 bottom-0 top-0'>
+            <div className='card-header'>
                 <h3 className='card-title'>Direct Chat</h3>
                 <div className='card-tools'>
                     <span
@@ -37,12 +115,12 @@ export default function ChatsBody() {
                         className='badge badge-primary'>
                         3
                     </span>
-                    <button
+                    {/* <button
                         type='button'
                         className='btn btn-tool'
                         data-card-widget='collapse'>
                         <i className='fas fa-minus' />
-                    </button>
+                    </button> */}
                     <button
                         type='button'
                         className='btn btn-tool'
@@ -50,18 +128,15 @@ export default function ChatsBody() {
                         data-widget='chat-pane-toggle'>
                         <i className='fas fa-comments' />
                     </button>
-                    <button
-                        type='button'
-                        className='btn btn-tool'
-                        data-card-widget='remove'>
-                        <i className='fas fa-times' />
+                    <button type='button' className='btn btn-tool'>
+                        <i className='fas fa-list-ul' />
                     </button>
                 </div>
             </div>
             {/* /.card-header */}
             <div className='card-body'>
                 {/* Conversations are loaded here */}
-                <div className='direct-chat-messages'>
+                <div className='direct-chat-messages h-100'>
                     {chats &&
                         chats.map((chat) => (
                             <Chats key={chat.id} chat={chat} />
@@ -69,7 +144,7 @@ export default function ChatsBody() {
                 </div>
                 {/*/.direct-chat-messages*/}
                 {/* Contacts are loaded here */}
-                <div className='direct-chat-contacts'>
+                <div className='direct-chat-contacts h-100'>
                     <ul className='contacts-list'>
                         <ContactsList />
                         <ContactsList />

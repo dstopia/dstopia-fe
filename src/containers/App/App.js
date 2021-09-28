@@ -75,7 +75,7 @@ const App = () => {
                     <Route path='/chats'>
                         <NavbarLte />
                         <SidebarLte />
-                        <div className='content-wrapper'>
+                        <div className='content-wrapper position-relative'>
                             <ChatsBody />
                         </div>
                     </Route>

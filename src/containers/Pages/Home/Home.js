@@ -5,6 +5,7 @@ import Post from '../../../components/Post/Post'
 import BASE_URL from '../../../config'
 import axios from 'axios'
 import ProfileCard from '../../../components/Profile/ProfileCard'
+import AboutMeCard from '../../../components/Profile/AboutMeCard'
 // import PostClosed from '../../../components/Post/PostClosed'
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
             </div>
             <div className='col-md-4 d-none d-md-block'>
                 <ProfileCard />
+                <AboutMeCard />
             </div>
         </div>
     )
