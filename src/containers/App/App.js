@@ -15,7 +15,9 @@ import UserList from '../DevPages/UserList/UserList'
 
 /** Components */
 import NavbarLte from '../../components/Navbar/NavbarLte'
+import Map from '../../components/Map/Map'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
+import SidebarRight from '../../components/Sidebar/SidebarRight'
 import ChatsBody from '../../components/Chats/ChatsBody'
 
 const App = () => {
@@ -39,6 +41,16 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Home />
+                            <SidebarRight />
+                        </div>
+                    </Route>
+                    {/* Map Page */}
+                    <Route exact path='/map'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Map />
+                            <SidebarRight />
                         </div>
                     </Route>
 
@@ -48,6 +60,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Journey />
+                            <SidebarRight />
                         </div>
                     </Route>
 
@@ -57,6 +70,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Gallery />
+                            <SidebarRight />
                         </div>
                     </Route>
 
@@ -66,6 +80,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <ChatsBody />
+                            <SidebarRight />
                         </div>
                     </Route>
 
@@ -75,6 +90,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Community />
+                            <SidebarRight />
                         </div>
                     </Route>
 
