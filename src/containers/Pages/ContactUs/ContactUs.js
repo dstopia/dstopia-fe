@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import HeaderImage from '../../../components/Header/HeaderImage'
 import ListPhoto from '../../../components/ListPhotos/ListPhoto'
-import ContactForm from '../../../components/Forms/ContactForm'
+import ContactForm from '../../../components/forms/contactForm'
 import './ContactUs.css'
 
 export default function ContactUs() {

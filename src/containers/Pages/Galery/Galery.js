@@ -1,5 +1,5 @@
 import React from "react";
-import GridPhotos from '../../../components/GridPhotos/GridPhotos'
+import GridPhotos from '../../../components/gridPhotos/GridPhotos'
 
 export default function gallery() {
     return (
