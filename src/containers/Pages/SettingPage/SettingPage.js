@@ -65,7 +65,7 @@ function Profile() {
         <div className='px-5 py-2'>
             <div className='d-flex justify-content-center align-items-center'>
                 <img
-                    src='/male.png'
+                    src='/images/male.png'
                     className='img-thumbnail rounded-circle'
                     alt='profile'>
                 </img>

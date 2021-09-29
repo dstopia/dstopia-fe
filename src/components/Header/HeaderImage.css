@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-utama {
+    background-image: url('./contact_us_header.jpg');
+    width: 100%;
+    height: 30rem;
+}
+
+.caption {
+    color: white;
+}

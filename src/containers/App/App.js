@@ -12,6 +12,7 @@ import Journey from '../Pages/Journey/Journey'
 import Community from '../Pages/Community/Community'
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import SettingPage from '../Pages/SettingPage/SettingPage'
+import ContactUs from '../Pages/ContactUs/ContactUs'
 
 /** Development Pages only */
 import UserList from '../DevPages/UserList/UserList'
@@ -64,6 +65,15 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Map />
+                        </div>
+                    </Route>
+
+                    {/* Contact Us Page */}
+                    <Route exact path='/contact-us'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <ContactUs />
                         </div>
                     </Route>
 
