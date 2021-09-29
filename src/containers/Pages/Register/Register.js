@@ -1,4 +1,5 @@
-import { useState, useHistory} from 'react'
+import { useState } from 'react'
+import { useHistory } from 'react-router'
 import axios from 'axios'
 import BASE_URL from '../../../config'
 import { Link } from 'react-router-dom'
