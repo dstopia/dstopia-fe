@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderImage from "../../../components/header/header_image"
+import HeaderImage from "../../../components/Header/header_image"
 import ListPhoto from "../../../components/ListPhotos/ListPhoto"
 import ContactForm from "../../../components/Forms/contactForm"
 import './ContactUs.css'

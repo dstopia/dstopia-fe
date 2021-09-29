@@ -4,13 +4,11 @@
 }
 
 .container-utama {
-    display: flex;
-    background-image: url(../images/image_resize.jpg);
+    background-image: url(../Images/image_resize.jpg);
     width: 100%;
     height: 30rem;
 }
 
 .caption {
-    text-align: center;
     color: white;
 }
