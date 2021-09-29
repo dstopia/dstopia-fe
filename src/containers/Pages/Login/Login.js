@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import BASE_URL from '../../../config'
-
-import './Login.css'
-
+import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../../features/user'
+
+import axios from 'axios'
+import BASE_URL from '../../../config'
+import './Login.css'
 
 export default function SignIn() {
     const [input, setInput] = useState({
         username: '',
         password: '',
     })
+
     const [error, setError] = useState({})
-    
+
     const dispatch = useDispatch()
-    
+    const history = useHistory()
+
     const handleChange = (e) => {
         const { id, value } = e.target
         setInput((prevState) => ({
@@ -31,12 +32,15 @@ export default function SignIn() {
             .post(`${BASE_URL}/user/login`, input)
             .then((user) => {
                 setError({})
-                console.log(user.data)
-                dispatch(login({user.data}))
+                console.log('hello')
+                dispatch(login(user.data))
+                history.push('/')
             })
             .catch((err) => {
-                if (err) {
+                if (err.response.data) {
                     setError(err.response.data)
+                } else {
+                    setError({ msg: 'Error not defined' })
                 }
             })
     }

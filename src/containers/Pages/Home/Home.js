@@ -20,36 +20,29 @@ const Home = () => {
     return (
         <div className='container'>
             <div className='row'>
-            {/*
                 <div className='col-md-8'>
                     <div className='d-none d-md-block'>
                         <Map />
                     </div>
-                    {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
+                    {post &&
+                        post.map((pst) => <Post key={pst._id} post={pst} />)}
                 </div>
                 <div className='col-md-4 d-none d-md-block'>
                     <ProfileCard />
                     <AboutMeCard />
-                </div>
-            */}
-                <div className='col'>
-                    <div className='d-none d-md-block'>
-                        <Map />
-                    </div>
-                    {post && post.map((pst) => <Post key={pst._id} post={pst} />)}
                 </div>
             </div>
         </div>
     )
 }
 
-const Card = () => {
-    return (
-        <div className='card shadow m-3'>
-            <div className='card-header'>Header</div>
-            <div className='card-body'>Body</div>
-            <div className='card-footer'>Footer</div>
-        </div>
-    )
-}
+// const Card = () => {
+//     return (
+//         <div className='card shadow m-3'>
+//             <div className='card-header'>Header</div>
+//             <div className='card-body'>Body</div>
+//             <div className='card-footer'>Footer</div>
+//         </div>
+//     )
+// }
 export default Home

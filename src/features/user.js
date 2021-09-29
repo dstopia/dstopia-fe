@@ -1,32 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialStateValue = {
-            id: '',
-            name: '',
-            email: '',
-        }
-const login = (state, action) => {
-    // get prev state and set new state from payload
-    state.value = action.payload // payload is an object or some information to change the state
-}
+    _id:'',
+    username:'',
+    img_thumb:'',
+    img_bg:'',
+    email:'',
+    follower:[],
+    following:[],
+    posts:[],
+    
 
-const logout = (state) => {
-    state.value = initialStateValue
 }
 
 export const userSlice = createSlice({
     // state name
     name: 'user',
     initialState: {
-        value: initialStateValue
+        value: initialStateValue,
     },
     // function to change state value
     reducers: {
-        login,
-        logout
+        login: (state, action) => {
+            state.value = action.payload
+        },
+        logout: (state) => [(state.value = initialStateValue)],
     },
 })
 
-export const { login, logout } = userSlice.action
+export const { login, logout } = userSlice.actions
 
 export default userSlice.reducer

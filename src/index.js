@@ -22,8 +22,8 @@ import userReducer from './features/user'
 
 const store = configureStore({
     reducer: {
-        user: userReducer
-    }
+        user: userReducer,
+    },
 })
 
 ReactDOM.render(
