@@ -1,17 +1,16 @@
+/** React dependencies */
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import BASE_URL from '../../config'
-
-/** Redux */
 import { useSelector } from 'react-redux' // access global state
 
 const ProfileCard = () => {
-    const currentUser = useSelector((state) => state.user.value)
-
     const [user, setUser] = useState({})
 
+    // get user from global state
+    const currentUser = useSelector((state) => state.user.value)
+
     useEffect(() => {
+        // cek if user exists
         if (currentUser._id !== '') {
             setUser(currentUser)
         }

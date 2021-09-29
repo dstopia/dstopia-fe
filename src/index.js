@@ -19,10 +19,12 @@ import App from './containers/App/App.js'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './features/user'
+import authReducer from './features/auth'
 
 const store = configureStore({
     reducer: {
         user: userReducer,
+        auth: authReducer,
     },
 })
 

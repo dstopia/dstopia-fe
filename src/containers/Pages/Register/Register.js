@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useHistory} from 'react'
 import axios from 'axios'
 import BASE_URL from '../../../config'
 import { Link } from 'react-router-dom'
@@ -14,6 +14,7 @@ const Register = () => {
     })
     const [isPending, setisPending] = useState(false)
     const [error, setError] = useState([])
+    const history = useHistory()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -34,6 +35,7 @@ const Register = () => {
             .then((res) => {
                 setisPending(false)
                 setError([])
+                history.push('/login')
                 console.log(res.data)
             })
             .catch((err) => {

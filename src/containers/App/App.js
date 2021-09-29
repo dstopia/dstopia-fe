@@ -47,7 +47,17 @@ const App = () => {
                             <Footer />
                         </div>
                     </Route>
-                    
+
+                    {/* Home Page */}
+                    <Route exact path='/home'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Home />
+                            <Footer />
+                        </div>
+                    </Route>
+
                     {/* Map Page */}
                     <Route exact path='/map'>
                         <NavbarLte />
@@ -92,7 +102,7 @@ const App = () => {
                             <Community />
                         </div>
                     </Route>
-                    
+
                     {/* Dashboard Page */}
                     <Route path='/dashboard'>
                         <NavbarLte />

@@ -1,20 +1,36 @@
-/** Components */
+/** React dependencies */
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
+
+/** Components */
 import Map from '../../../components/Map/Map'
 import Post from '../../../components/Post/Post'
-import BASE_URL from '../../../config'
-import axios from 'axios'
 import ProfileCard from '../../../components/Profile/ProfileCard'
 import AboutMeCard from '../../../components/Profile/AboutMeCard'
-// import PostClosed from '../../../components/Post/PostClosed'
+
+/** Utils */
+import BASE_URL from '../../../config'
+import axios from 'axios'
 
 const Home = () => {
     const [post, setPost] = useState([])
+    const history = useHistory()
+
+    // get auth state
+    const isLoggedin = useSelector((state) => state.auth.value)
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/post`).then((res) => {
-            setPost(res.data)
-        })
+        // cek if user already logged in
+        if (isLoggedin) {
+            // get all post from db
+            axios.get(`${BASE_URL}/post`).then((res) => {
+                setPost(res.data)
+            })
+        } else {
+            // redirect to login page
+            history.push('/login')
+        }
     }, [post])
 
     return (
@@ -36,13 +52,5 @@ const Home = () => {
     )
 }
 
-// const Card = () => {
-//     return (
-//         <div className='card shadow m-3'>
-//             <div className='card-header'>Header</div>
-//             <div className='card-body'>Body</div>
-//             <div className='card-footer'>Footer</div>
-//         </div>
-//     )
-// }
+
 export default Home

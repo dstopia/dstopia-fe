@@ -1,10 +1,17 @@
+/** React dependencies */
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { login } from '../../../features/user'
 
+/** global state */
+import { login } from '../../../features/user'
+import { loggedIn } from '../../../features/auth'
+
+/** utils */
 import axios from 'axios'
 import BASE_URL from '../../../config'
+
+/** Styles */
 import './Login.css'
 
 export default function SignIn() {
@@ -18,6 +25,7 @@ export default function SignIn() {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    // handle input user
     const handleChange = (e) => {
         const { id, value } = e.target
         setInput((prevState) => ({
@@ -26,14 +34,39 @@ export default function SignIn() {
         }))
     }
 
+    // send and check data to server
     const handleSubmit = (e) => {
         e.preventDefault()
         axios
             .post(`${BASE_URL}/user/login`, input)
             .then((user) => {
+                // data valid
                 setError({})
-                console.log('hello')
                 dispatch(login(user.data))
+                dispatch(loggedIn())
+                history.push('/')
+            })
+            .catch((err) => {
+                // data not valid
+                if (err.response.data) {
+                    setError(err.response.data)
+                } else {
+                    setError({ msg: 'Error not defined' })
+                }
+            })
+    }
+
+    // login as guest
+    const setGuest = () => {
+        axios
+            .post(`${BASE_URL}/user/login`, {
+                username: 'guest',
+                password: '123456',
+            })
+            .then((user) => {
+                setError({})
+                dispatch(login(user.data))
+                dispatch(loggedIn())
                 history.push('/')
             })
             .catch((err) => {
@@ -100,6 +133,11 @@ export default function SignIn() {
                             type='submit'
                             className='btn btn-outline-primary btn-block'>
                             Login
+                        </button>
+                        <button
+                            onClick={setGuest}
+                            className='btn btn-outline-primary btn-block'>
+                            Login As Guest
                         </button>
                         <p className='line my-3'>or</p>
                         <div className='d-flex justify-content-evenly my-3'>
