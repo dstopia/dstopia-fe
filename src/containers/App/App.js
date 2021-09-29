@@ -4,12 +4,11 @@ import { connect } from 'react-redux'
 
 /** Pages */
 import Home from '../Pages/Home/Home'
-// import PageNotFound from '../Pages/404/PageNotFound'
+import PageNotFound from '../Pages/404/PageNotFound'
 import Gallery from '../Pages/Galery/Galery'
 import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import Journey from '../Pages/Journey/Journey'
-import Community from '../Pages/Community/Community'
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import SettingPage from '../Pages/SettingPage/SettingPage'
 import ContactUs from '../Pages/ContactUs/ContactUs'
@@ -104,15 +103,6 @@ const App = () => {
                         </div>
                     </Route>
 
-                    {/* Community Page */}
-                    <Route path='/community'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <Community />
-                        </div>
-                    </Route>
-
                     {/* Dashboard Page */}
                     <Route path='/dashboard'>
                         <NavbarLte />
@@ -123,7 +113,7 @@ const App = () => {
                     </Route>
 
                     {/* Router not found */}
-                    {/* <Route path='/*' exact component={PageNotFound} /> */}
+                    <Route path='/404' exact component={PageNotFound} />
 
                     {/* Setting Page */}
                     <Route path='/setting' component={SettingPage} />

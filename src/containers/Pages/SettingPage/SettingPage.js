@@ -67,49 +67,48 @@ function Profile() {
                 <img
                     src='/images/male.png'
                     className='img-thumbnail rounded-circle'
-                    alt='profile'>
-                </img>
-                <i className='far fa-edit icon align-self-end'></i>
+                    alt='profile'
+                />
+                <i className='far fa-edit icon align-self-end' />
             </div>
-
             <form>
-                <div class='mb-3'>
-                    <label for='username' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='username' className='form-label'>
                         User Name:
                     </label>
                     <input
                         type='text'
                         name='username'
-                        class='form-control'
+                        className='form-control'
                         id='username'
                     />
                 </div>
-                <div class='mb-3'>
-                    <label for='email' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='email' className='form-label'>
                         Email:
                     </label>
                     <input
                         type='email'
                         name='email'
-                        class='form-control'
+                        className='form-control'
                         id='email'
                     />
                 </div>
-                <div class='mb-3'>
-                    <label for='bio' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='bio' className='form-label'>
                         Bio:
                     </label>
                     <textarea
                         name='bio'
                         type='text'
-                        class='form-control'
+                        className='form-control'
                         id='bio'
-                        rows='4'
+                        rows={4}
+                        defaultValue={
+                            "                </div>\n                <button type='submit' className='btn btn-primary'>\n                    Save\n                </button>\n            </form>\n        </div>\n"
+                        }
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>
-                    Save
-                </button>
             </form>
         </div>
     )
@@ -119,36 +118,36 @@ function Password() {
     return (
         <div className='px-5 py-2'>
             <form>
-                <div class='mb-3'>
-                    <label for='currentpassword' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='currentpassword' className='form-label'>
                         Current Password:
                     </label>
                     <input
                         type='password'
                         name='currentpassword'
-                        class='form-control'
+                        className='form-control'
                         id='currentpassword'
                     />
                 </div>
-                <div class='mb-3'>
-                    <label for='newpassword' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='newpassword' className='form-label'>
                         New Password:
                     </label>
                     <input
                         type='password'
                         name='newpassword'
-                        class='form-control'
+                        className='form-control'
                         id='newpassword'
                     />
                 </div>
-                <div class='mb-3'>
-                    <label for='currentpassword' class='form-label'>
+                <div className='mb-3'>
+                    <label htmlFor='currentpassword' className='form-label'>
                         Confirm New Password:
                     </label>
                     <input
                         type='password'
                         name='currentpassword'
-                        class='form-control'
+                        className='form-control'
                         id='currentpassword'
                     />
                 </div>

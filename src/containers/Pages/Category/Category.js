@@ -1,9 +1,5 @@
 import React from 'react'
 
 export default function Category() {
-    return (
-        <div>
-            Category page
-        </div>
-    )
+    return <div>Category page</div>
 }
