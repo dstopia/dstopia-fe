@@ -4,11 +4,20 @@
     padding: 0;
 }
 
-.main, .col-lg, .row,.content-header, .container-fluid {
+.head, .col-lg, .row,.content-header, .container-fluid {
     padding: 0;
     margin: 0;
 }
 
 .header {
     width: 25rem;
+}
+
+.foto {
+    height: 30rem;
+}
+
+.content-main {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 54%, rgba(32,54,214,1) 54%);
+    height: 50rem;
 }

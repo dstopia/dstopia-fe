@@ -1,6 +1,5 @@
 import React from "react";
 import './header_image.css'
-import Nature from '../images/image.jpg'
 
 export default function HeaderImage() {
     return (
