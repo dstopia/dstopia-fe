@@ -6,27 +6,6 @@
 
 .contact-form {
     background-color: white;
-    padding-top: 1rem;
-    padding-right: 2rem;
-    padding-bottom: 3rem;
-    box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.24);
-    -webkit-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.24);
-    -moz-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.24);
-}
-
-h1 {
-    color: grey;
-    margin-left: 10rem;
-    margin-top: 2rem;
-}
-
-.contact {
-    margin-left: 2rem;
-    margin-top: 3rem;
-}
-
-.form-control:valid {
-    background-color: #E9ECEF !important;
 }
 
 .button {

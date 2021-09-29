@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderImage from "../../../components/header/header_image"
 import ListPhoto from "../../../components/ListPhotos/ListPhoto"
-import ContactForm from "../../../components/forms/contactForm"
+import ContactForm from "../../../components/Forms/contactForm"
 import './ContactUs.css'
 
 export default function ContactUs() {
