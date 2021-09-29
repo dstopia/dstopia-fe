@@ -1,5 +1,5 @@
 import React from "react";
-import Photos from "../../../components/Photos/Photos";
+import GridPhotos from '../../../components/GridPhotos/GridPhotos'
 
 export default function gallery() {
     return (
@@ -8,7 +8,7 @@ export default function gallery() {
                 <h1 className="mt-3 text-center">Gallery Page</h1>
                 <div className="row">
                     <div className="col">
-                        <Photos/>
+                        <GridPhotos/>
                     </div>
                 </div>
             </div>

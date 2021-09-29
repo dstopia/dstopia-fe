@@ -67,7 +67,7 @@ export default function SidebarList() {
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/contact-us' className='nav-link'>
                     <i className='nav-icon fas fa-headset' />
                     <p>Contacts Us</p>
                 </Link>
