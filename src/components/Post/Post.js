@@ -40,29 +40,17 @@ export default function Post({ post }) {
                             title='Mark as read'>
                             <i className='far fa-circle' />
                         </button>
-                        <button
-                            type='button'
-                            className='btn btn-tool'
-                            data-card-widget='collapse'>
-                            <i className='fas fa-minus' />
-                        </button>
-                        <button
-                            type='button'
-                            className='btn btn-tool'
-                            data-card-widget='remove'>
-                            <i className='fas fa-times' />
-                        </button>
                     </div>
                     {/* /.card-tools */}
                 </div>
                 {/* /.card-header */}
                 <div className='card-body'>
                     <img
-                        className='img-fluid pad'
+                        className='img-fluid pad mb-3'
                         src='https://source.unsplash.com/random/1254x836'
                         alt='Not Found'
                     />
-                    <p>{post.caption}</p>
+                  
                     <button
                         type='button'
                         className='btn btn-default btn-sm'
@@ -89,6 +77,7 @@ export default function Post({ post }) {
                     <span className='float-right text-muted'>
                         {likeCount} likes - {post.comment.length} comments
                     </span>
+                      <p className='mt-3'>{post.caption}</p>
                 </div>
                 {/* /.card-body */}
                 <div

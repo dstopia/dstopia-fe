@@ -49,7 +49,11 @@ export default function SignIn() {
             .catch((err) => {
                 // data not valid
                 if (err.response !== undefined) {
-                    setError(err.response.data)
+                    if (err.response.data !== undefined) {
+                        setError(err.response.data)
+                    } else {
+                        setError({ msg: 'Error not defined' })
+                    }
                 } else {
                     setError({ msg: 'Error not defined' })
                 }

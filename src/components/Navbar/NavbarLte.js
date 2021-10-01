@@ -12,9 +12,9 @@ export default function NavbarLte() {
         <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
             {/* Left navbar links */}
             <ul className='navbar-nav'>
-                <li className='nav-item d-none d-sm-inline-block'>
+                <li className='nav-item'>
                     <Link
-                        className='nav-link'
+                        className='nav-link d-none d-sm-inline-block'
                         data-widget='pushmenu'
                         onClick={handleArrow}
                         to='#'
@@ -25,6 +25,7 @@ export default function NavbarLte() {
                             <i className='fas fa-angle-right' />
                         )}
                     </Link>
+                    <Link className='nav-link navbar-brand d-sm-none d-inline-block' to='#'>DsTopia</Link>
                 </li>
             </ul>
             {/* Right navbar links */}

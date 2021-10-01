@@ -18,8 +18,8 @@ const Home = () => {
     const history = useHistory()
 
     // get auth state
-    const isLoggedin = useSelector((state) => state.auth.value)
-
+    // const isLoggedin = useSelector((state) => state.auth.value)
+    const isLoggedin = true
     useEffect(() => {
         // cek if user already logged in
         if (isLoggedin) {
@@ -36,7 +36,7 @@ const Home = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-md-8 pb-5'>
                     <div className='d-none d-md-block'>
                         <Map />
                     </div>

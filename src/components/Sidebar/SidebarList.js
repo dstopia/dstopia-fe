@@ -1,7 +1,13 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 export default function SidebarList() {
+    
+    const { path } = useRouteMatch()
+    
+    const activeList = (link) => {
+        return link === path ? 'nav-link active' : 'nav-link'
+    }
     return (
         <Fragment>
             {/* Add icons to the links using the .nav-icon class
@@ -15,20 +21,20 @@ export default function SidebarList() {
                     </li>
                 </ul> */}
            
-            <li className='nav-item'>
-                <Link to='/' className='nav-link active'>
+            <li className='nav-item d-none d-sm-block'>
+                <Link to='/' className={activeList('/')}>
                     <i className='nav-icon fas fa-home' />
                     <p>Home</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/map' className='nav-link'>
+                <Link to='/map' className={activeList('/map')}>
                     <i className='nav-icon fas fa-map' />
                     <p>Map</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/dashboard' className='nav-link'>
+                <Link to='/dashboard' className={activeList('/dashboard')}>
                     <i className='nav-icon fas fa-tachometer-alt' />
                     <p>
                         Dashboard
@@ -37,37 +43,37 @@ export default function SidebarList() {
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/journey' className={activeList('/journey')}>
                     <i className='nav-icon fas fa-compass' />
                     <p>Journey</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/category' className={activeList('/category')}>
                     <i className='nav-icon fas fa-book' />
                     <p>Category</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/community' className={activeList('/community')}>
                     <i className='nav-icon fas fa-globe' />
                     <p>Community</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/gallery' className={activeList('/gallery')}>
                     <i className='nav-icon fas fa-image' />
                     <p>Gallery</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/gallery' className='nav-link'>
+                <Link to='/tips-and-tricks' className={activeList('/tips-and-tricks')}>
                     <i className='nav-icon fas fa-sign' />
                     <p>Tips &amp; Tricks</p>
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/contact-us' className='nav-link'>
+                <Link to='/contact-us' className={activeList('/contact-us')}>
                     <i className='nav-icon fas fa-headset' />
                     <p>Contacts Us</p>
                 </Link>
@@ -75,7 +81,7 @@ export default function SidebarList() {
 
             {/* Mail start */}
             <li className='nav-item'>
-                <Link to='#' className='nav-link'>
+                <Link to='#' className={activeList()}>
                     <i className='nav-icon far fa-envelope' />
                     <p>
                         Mailbox

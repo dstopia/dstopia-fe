@@ -53,7 +53,11 @@ const App = () => {
                         <NavbarLte />
                         <SidebarLte />
                         <div className='content-wrapper'>
-                            <Home />
+                            <Switch>
+                                <Route>
+                                    <Body />
+                                </Route>
+                            </Switch>
                             <Footer />
                         </div>
                     </Route>
@@ -121,6 +125,11 @@ const App = () => {
             </Switch>
         </Router>
     )
+}
+const Body = () => {
+    return (
+            <div>Body</div>
+        )
 }
 
 const Loader = () => {
