@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { useRouteMatch } from 'react-router-dom'
 // import './App.css'
 
 /** Pages */
@@ -22,13 +23,15 @@ import Map from '../../components/Map/Map'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
 import ChatsBody from '../../components/Chats/ChatsBody'
 import Footer from '../../components/Footer/Footer'
+import { Fragment } from 'react'
+import { AddPost } from '../../components/Post/AddPost'
 
 const App = () => {
     return (
         <Router>
             <Switch>
                 <div className='wrapper'>
-                    <Loader />
+                    {/* <Loader /> */}
                     {/* Register Page */}
                     <Route path='/register' component={Register} />
 
@@ -44,20 +47,6 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Home />
-                            <Footer />
-                        </div>
-                    </Route>
-
-                    {/* Home Page */}
-                    <Route exact path='/home'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <Switch>
-                                <Route>
-                                    <Body />
-                                </Route>
-                            </Switch>
                             <Footer />
                         </div>
                     </Route>
@@ -107,6 +96,15 @@ const App = () => {
                         </div>
                     </Route>
 
+                    {/* Add Post Page */}
+                    <Route path='/add-post'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper position-relative'>
+                            <AddPost />
+                        </div>
+                    </Route>
+
                     {/* Dashboard Page */}
                     <Route path='/dashboard'>
                         <NavbarLte />
@@ -125,11 +123,6 @@ const App = () => {
             </Switch>
         </Router>
     )
-}
-const Body = () => {
-    return (
-            <div>Body</div>
-        )
 }
 
 const Loader = () => {

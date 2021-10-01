@@ -11,7 +11,7 @@ const Footer = () => {
                         </Link>
                     </li>
                     <li className='navbar-item'>
-                        <Link className='navbar-link link-light' to='#'>
+                        <Link className='navbar-link link-light' to='/add-post'>
                             <i className='fas fa-plus-square'></i>
                         </Link>
                     </li>

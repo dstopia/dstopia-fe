@@ -21,6 +21,13 @@ export default function SidebarList() {
                     </li>
                 </ul> */}
            
+            <li className='nav-item d-sm-none d-block'>
+                <Link to='/login' className={activeList()}>
+                    <i className='nav-icon far fa-circle' />
+                    <p>Login / Signup</p>
+                </Link>
+            </li>
+
             <li className='nav-item d-none d-sm-block'>
                 <Link to='/' className={activeList('/')}>
                     <i className='nav-icon fas fa-home' />
