@@ -1,5 +1,5 @@
 /** React dependencies */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
@@ -25,6 +25,21 @@ export default function SignIn() {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    // cek if user already login
+    useEffect(() => {
+        axios
+            .get(`${BASE_URL}/user/login`)
+            .then((user) => {
+                console.log(user)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        return () => {
+            console.log('clean up')
+        }
+    }, [])
+    
     // handle input user
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -43,6 +58,7 @@ export default function SignIn() {
                 // data valid
                 setError({})
                 dispatch(login(user.data))
+                console.log(user)
                 dispatch(loggedIn())
                 history.push('/')
             })
