@@ -1,6 +1,6 @@
 /** React dependencies */
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 
 /** Components */
@@ -31,7 +31,7 @@ const Home = () => {
             // redirect to login page
             history.push('/login')
         }
-    }, [post])
+    }, [])
 
     return (
         <div className='container'>

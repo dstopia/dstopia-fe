@@ -22,14 +22,15 @@ export const AddPost = () => {
         setIsPending(true)
         axios
             .post(`${BASE_URL}/post`, post)
-            .then(() => {
+            .then((data) => {
+                console.log(data.data)
                 setIsPending(false)
                 history.push('/')
             })
             .catch((err) => {
                 setIsPending(false)
                 setError(true)
-                console.log({err})
+                console.log({ err })
             })
     }
 

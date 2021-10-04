@@ -1,7 +1,9 @@
+/** React dependencies */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { useRouteMatch } from 'react-router-dom'
-// import './App.css'
+// import { useRouteMatch } from 'react-router-dom'
+
+/** Utils */
+import axios from 'axios'
 
 /** Pages */
 import Home from '../Pages/Home/Home'
@@ -23,10 +25,13 @@ import Map from '../../components/Map/Map'
 import SidebarLte from '../../components/Sidebar/SidebarLte'
 import ChatsBody from '../../components/Chats/ChatsBody'
 import Footer from '../../components/Footer/Footer'
-import { Fragment } from 'react'
 import { AddPost } from '../../components/Post/AddPost'
+import TipsAndTricks from '../Pages/TipsAndTricks/TipsAndTricks'
+import Category from '../Pages/Category/Category'
 
 const App = () => {
+    axios.defaults.withCredentials = true
+
     return (
         <Router>
             <Switch>
@@ -41,6 +46,46 @@ const App = () => {
                     {/* User List Page */}
                     <Route path='/user-list' component={UserList} />
 
+                    {/* Category Page */}
+                    <Route path='/category'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Category />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* Contact Us Page */}
+                    <Route exact path='/contact-us'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <ContactUs />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* Dashboard Page */}
+                    <Route path='/dashboard'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Dashboard />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* Gallery Page */}
+                    <Route path='/gallery'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Gallery />
+                            <Footer />
+                        </div>
+                    </Route>
+
                     {/* Home Page */}
                     <Route exact path='/'>
                         <NavbarLte />
@@ -51,39 +96,33 @@ const App = () => {
                         </div>
                     </Route>
 
-                    {/* Map Page */}
-                    <Route exact path='/map'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <Map />
-                        </div>
-                    </Route>
-
-                    {/* Contact Us Page */}
-                    <Route exact path='/contact-us'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <ContactUs />
-                        </div>
-                    </Route>
-
                     {/* Journey Page */}
                     <Route path='/journey'>
                         <NavbarLte />
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Journey />
+                            <Footer />
                         </div>
                     </Route>
 
-                    {/* Gallery Page */}
-                    <Route path='/gallery'>
+                    {/* Tips And Tricks Page */}
+                    <Route path='/tips-and-tricks'>
                         <NavbarLte />
                         <SidebarLte />
                         <div className='content-wrapper'>
-                            <Gallery />
+                            <TipsAndTricks />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* Map Page */}
+                    <Route exact path='/map'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Map />
+                            <Footer />
                         </div>
                     </Route>
 
@@ -93,6 +132,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper position-relative'>
                             <ChatsBody />
+                            <Footer />
                         </div>
                     </Route>
 
@@ -102,15 +142,7 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper position-relative'>
                             <AddPost />
-                        </div>
-                    </Route>
-
-                    {/* Dashboard Page */}
-                    <Route path='/dashboard'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <Dashboard />
+                            <Footer />
                         </div>
                     </Route>
 
@@ -135,16 +167,4 @@ const Loader = () => {
     )
 }
 
-const mapStateToProos = (state) => {
-    // state global
-    return {
-        user: state.user,
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        greet: () => dispatch({ type: 'GREET_USER' }),
-    }
-}
-export default connect(mapStateToProos, mapDispatchToProps)(App)
+export default App
