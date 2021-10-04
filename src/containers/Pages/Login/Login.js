@@ -106,13 +106,13 @@ export default function SignIn() {
                             <label
                                 htmlFor='username'
                                 className='form-label fw-normal'>
-                                Username or Email
+                                Email or Username
                             </label>
                             <input
                                 type='text'
                                 className='form-control'
                                 id='username'
-                                placeholder='Enter your username'
+                                placeholder='Email or username'
                                 onChange={handleChange}
                             />
                         </div>
