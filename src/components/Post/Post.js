@@ -5,6 +5,7 @@ import { BrowserRouter as Link } from 'react-router-dom'
 export default function Post({ post }) {
     const [likes, setLikes] = useState(post.isLiked)
     const [likeCount, setLikeCount] = useState(0)
+    console.log(post)
 
     const handleLikes = () => {
         if (likes) {
@@ -25,7 +26,7 @@ export default function Post({ post }) {
                         alt='Not found'
                     />
                     <span className='username'>
-                        <Link to='/'>{post.username}</Link>
+                        <Link to='/'>{post.user.username}</Link>
                     </span>
                     <span className='description'>
                         Shared publicly - {post.timeSend}

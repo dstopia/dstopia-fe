@@ -14,6 +14,7 @@ const ProfileCard = () => {
         if (currentUser._id !== '') {
             setUser(currentUser)
         }
+        console.log(currentUser)
     }, [])
 
     return (
@@ -49,7 +50,7 @@ const ProfileCard = () => {
                             <li className='list-group-item'>
                                 <b>Posts</b>
                                 <Link to='#' className='float-right'>
-                                    {user.posts.length}
+                                    {user.post.length}
                                 </Link>
                             </li>
                         </ul>

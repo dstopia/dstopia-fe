@@ -9,7 +9,7 @@ export default function NavbarLte() {
     }
 
     return (
-        <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark'>
+        <nav className='main-header shadow-sm navbar navbar-expand navbar-primary navbar-dark position-sticky top-0'>
             {/* Left navbar links */}
             <ul className='navbar-nav'>
                 <li className='nav-item'>

@@ -7,7 +7,6 @@ import { useHistory } from 'react-router'
 import Map from '../../../components/Map/Map'
 import Post from '../../../components/Post/Post'
 import ProfileCard from '../../../components/Profile/ProfileCard'
-import AboutMeCard from '../../../components/Profile/AboutMeCard'
 
 /** Utils */
 import BASE_URL from '../../../config'
@@ -45,12 +44,10 @@ const Home = () => {
                 </div>
                 <div className='col-md-4 d-none d-md-block'>
                     <ProfileCard />
-                    <AboutMeCard />
                 </div>
             </div>
         </div>
     )
 }
-
 
 export default Home

@@ -43,7 +43,7 @@ export const AddPost = () => {
     }
 
     return (
-        <div className='card card-widget m-2 m-md-3'>
+        <div className='card card-widget m-2 m-md-3 mb-5'>
             <div className='card-header'>
                 {error && (
                     <div
