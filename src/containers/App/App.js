@@ -29,6 +29,7 @@ import { AddPost } from '../../components/Post/AddPost'
 import TipsAndTricks from '../Pages/TipsAndTricks/TipsAndTricks'
 import Category from '../Pages/Category/Category'
 import { Community } from '../Pages/Community/Community'
+import ProfileCard from '../../components/Profile/ProfileCard'
 
 const App = () => {
     axios.defaults.withCredentials = true
@@ -151,8 +152,18 @@ const App = () => {
                     <Route path='/add-post'>
                         <NavbarLte />
                         <SidebarLte />
-                        <div className='content-wrapper position-relative'>
+                        <div className='content-wrapper'>
                             <AddPost />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* User Page */}
+                    <Route path='/user'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <ProfileCard />
                             <Footer />
                         </div>
                     </Route>

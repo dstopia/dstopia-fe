@@ -43,13 +43,13 @@ export const AddPost = () => {
     }
 
     return (
-        <div className='card card-widget m-2 m-md-3 mb-5'>
+        <div className='card m-2 mx-md-5 mb-5 mb-sm-0'>
             <div className='card-header'>
                 {error && (
                     <div
                         className='alert alert-danger alert-dismissible fade show'
                         role='alert'>
-                        <strong>Upss</strong> Failed to send your post
+                        <strong>Upss</strong> Failed to send your post.
                         <button
                             type='button'
                             className='btn-close'
@@ -65,7 +65,7 @@ export const AddPost = () => {
                         src='https://source.unsplash.com/random/128x128'
                         alt='Not found'
                     />
-                    <span className='username'>Your Name</span>
+                    <span className='username'>{currentUser.username ? currentUser.username: 'No User'}</span>
                     <span className='description'>
                         Edit post location
                         <Link to='#'>
@@ -88,7 +88,7 @@ export const AddPost = () => {
             <div className='card-body'>
                 <img
                     className='img-fluid pad mb-3'
-                    src='https://source.unsplash.com/random/1254x836'
+                    src='https://source.unsplash.com/random/400x400'
                     alt='Not Found'
                 />
                 <form onSubmit={handleSubmit}>
@@ -117,7 +117,7 @@ export const AddPost = () => {
                         </label>
                     </div>
 
-                    <div className='input-group mb-3'>
+                    <div className='input-group aria-describedby="hashHelp"'>
                         <span className='input-group-text'>#</span>
                         <input
                             type='text'
@@ -127,7 +127,8 @@ export const AddPost = () => {
                             onChange={handleChange}
                         />
                     </div>
-                    <div className='d-grid'>
+                    <div className="form-text" id='hashHelp'>Separate by space.</div>
+                    <div className='d-grid my-3'>
                         {isPending ? (
                             <button
                                 className='btn btn-primary'

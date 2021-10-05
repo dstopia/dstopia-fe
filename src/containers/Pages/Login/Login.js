@@ -39,7 +39,7 @@ export default function SignIn() {
             console.log('clean up')
         }
     }, [])
-    
+
     // handle input user
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -63,16 +63,17 @@ export default function SignIn() {
                 history.push('/')
             })
             .catch((err) => {
-                // data not valid
-                if (err.response !== undefined) {
-                    if (err.response.data !== undefined) {
-                        setError(err.response.data)
-                    } else {
-                        setError({ msg: 'Error not defined' })
-                    }
-                } else {
-                    setError({ msg: 'Error not defined' })
-                }
+                console.log(err.message)
+                // // data not valid
+                // if (err.response !== undefined) {
+                //     if (err.response.data !== undefined) {
+                //         setError(err.response.data)
+                //     } else {
+                //         setError({ msg: 'Error not defined' })
+                //     }
+                // } else {
+                //     setError({ msg: 'Error not defined' })
+                // }
             })
     }
 
