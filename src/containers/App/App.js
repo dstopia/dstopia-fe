@@ -28,6 +28,7 @@ import Footer from '../../components/Footer/Footer'
 import { AddPost } from '../../components/Post/AddPost'
 import TipsAndTricks from '../Pages/TipsAndTricks/TipsAndTricks'
 import Category from '../Pages/Category/Category'
+import { Community } from '../Pages/Community/Community'
 
 const App = () => {
     axios.defaults.withCredentials = true
@@ -52,6 +53,16 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Category />
+                            <Footer />
+                        </div>
+                    </Route>
+
+                    {/* Category Page */}
+                    <Route path='/community'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Community />
                             <Footer />
                         </div>
                     </Route>

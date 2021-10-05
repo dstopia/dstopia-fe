@@ -2,9 +2,8 @@ import React, { Fragment } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 
 export default function SidebarList() {
-    
     const { path } = useRouteMatch()
-    
+
     const activeList = (link) => {
         return link === path ? 'nav-link active' : 'nav-link'
     }
@@ -12,7 +11,7 @@ export default function SidebarList() {
         <Fragment>
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
-               {/* <ul className='nav nav-treeview'>
+            {/* <ul className='nav nav-treeview'>
                     <li className='nav-item'>
                         <Link to='/setting' className='nav-link'>
                             <i className='far fa-circle nav-icon' />
@@ -20,7 +19,7 @@ export default function SidebarList() {
                         </Link>
                     </li>
                 </ul> */}
-           
+
             <li className='nav-item d-sm-none d-block'>
                 <Link to='/login' className={activeList()}>
                     <i className='nav-icon far fa-circle' />
@@ -45,7 +44,7 @@ export default function SidebarList() {
                     <i className='nav-icon fas fa-tachometer-alt' />
                     <p>
                         Dashboard
-                       {/* <i className='right fas fa-angle-left' /> */}
+                        {/* <i className='right fas fa-angle-left' /> */}
                     </p>
                 </Link>
             </li>
@@ -74,7 +73,9 @@ export default function SidebarList() {
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/tips-and-tricks' className={activeList('/tips-and-tricks')}>
+                <Link
+                    to='/tips-and-tricks'
+                    className={activeList('/tips-and-tricks')}>
                     <i className='nav-icon fas fa-sign' />
                     <p>Tips &amp; Tricks</p>
                 </Link>
@@ -86,40 +87,8 @@ export default function SidebarList() {
                 </Link>
             </li>
 
-            {/* Mail start */}
-            <li className='nav-item'>
-                <Link to='#' className={activeList()}>
-                    <i className='nav-icon far fa-envelope' />
-                    <p>
-                        Mailbox
-                        <i className='fas fa-angle-left right' />
-                    </p>
-                </Link>
-                <ul className='nav nav-treeview'>
-                    <li className='nav-item'>
-                        <Link to='#' className='nav-link'>
-                            <i className='far fa-circle nav-icon' />
-                            <p>Inbox</p>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='#' className='nav-link'>
-                            <i className='far fa-circle nav-icon' />
-                            <p>Compose</p>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='#' className='nav-link'>
-                            <i className='far fa-circle nav-icon' />
-                            <p>Read</p>
-                        </Link>
-                    </li>
-                </ul>
-            </li>
-            {/* Mail end */}
-            
             {/* Development Page Only */}
-              <li className='nav-item'>
+            <li className='nav-item'>
                 <Link to='/user-list' className='nav-link'>
                     <i className='nav-icon fas fa-user' />
                     <p>DEV - User List</p>

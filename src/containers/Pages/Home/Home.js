@@ -1,6 +1,6 @@
 /** React dependencies */
 import { useState, useEffect } from 'react'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 
 /** Components */
@@ -17,8 +17,8 @@ const Home = () => {
     const history = useHistory()
 
     // get auth state
-    // const isLoggedin = useSelector((state) => state.auth.value)
-    const isLoggedin = true
+    const isLoggedin = useSelector((state) => state.auth.value)
+    // const isLoggedin = true
     useEffect(() => {
         // cek if user already logged in
         if (isLoggedin) {
