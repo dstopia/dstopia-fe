@@ -30,6 +30,8 @@ import ChatsBody from '../../components/Chats/ChatsBody'
 import Footer from '../../components/Footer/Footer'
 import { AddPost } from '../../components/Post/AddPost'
 import ProfileCard from '../../components/Profile/ProfileCard'
+import { UserPost } from '../../components/Post/UserPost'
+import AboutMeCard from '../../components/Profile/AboutMeCard'
 
 const App = () => {
     axios.defaults.withCredentials = true
@@ -164,7 +166,17 @@ const App = () => {
                         <NavbarLte />
                         <SidebarLte />
                         <div className='content-wrapper'>
-                            <ProfileCard user={currentUser} />
+                            <div className='container'>
+                                <div className='row'>
+                                    <div className='col'>
+                                        <ProfileCard user={currentUser} />
+                                    </div>
+                                    <div className='col d-none d-sm-block'>
+                                        <AboutMeCard />
+                                    </div>
+                                </div>
+                                <UserPost posts={currentUser.post} />
+                            </div>
                             <Footer />
                         </div>
                     </Route>
