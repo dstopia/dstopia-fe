@@ -5,7 +5,6 @@ import { BrowserRouter as Link } from 'react-router-dom'
 export default function Post({ post }) {
     const [likes, setLikes] = useState(post.isLiked)
     const [likeCount, setLikeCount] = useState(0)
-    console.log(post)
 
     const handleLikes = () => {
         if (likes) {
@@ -78,6 +77,18 @@ export default function Post({ post }) {
                     {likeCount} likes - {post.comment.length} comments
                 </span>
                 <p className='mt-3'>{post.caption}</p>
+                {post.hashtag.length > 0 && (
+                    <div className='my-2 fst-italic'>
+                        {post.hashtag.map((v, i) => (
+                            <Link
+                                to='#'
+                                key={i}
+                                className='fst-italic'>
+                                {`#${v} `}
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </div>
             {/* /.card-body */}
             <div className='card-footer card-comments collapse' id={post.id}>

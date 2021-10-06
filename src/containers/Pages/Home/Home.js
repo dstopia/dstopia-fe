@@ -18,6 +18,10 @@ const Home = () => {
 
     // get auth state
     const isLoggedin = useSelector((state) => state.auth.value)
+
+    // get logged user state
+    const currentUser = useSelector((state) => state.user.value)
+
     // const isLoggedin = true
     useEffect(() => {
         // cek if user already logged in
@@ -39,11 +43,15 @@ const Home = () => {
                     <div className='d-none d-md-block'>
                         <Map />
                     </div>
-                    {post &&
-                        post.map((pst) => <Post key={pst._id} post={pst} />)}
+                    <div className='d-flex flex-column-reverse'>
+                        {post &&
+                            post.map((pst) => (
+                                <Post key={pst._id} post={pst} />
+                            ))}
+                    </div>
                 </div>
                 <div className='col-md-4 d-none d-md-block'>
-                    <ProfileCard />
+                    <ProfileCard user={currentUser} />
                 </div>
             </div>
         </div>

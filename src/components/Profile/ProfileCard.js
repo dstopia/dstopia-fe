@@ -3,19 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux' // access global state
 
-const ProfileCard = () => {
-    const [user, setUser] = useState({})
-
-    // get user from global state
-    const currentUser = useSelector((state) => state.user.value)
-
-    useEffect(() => {
-        // cek if user exists
-        if (currentUser._id !== '') {
-            setUser(currentUser)
-        }
-        console.log(currentUser)
-    }, [])
+const ProfileCard = ({user}) => {
 
     return user.username !== undefined ? (
         <div className='mx-3 pt-3'>
