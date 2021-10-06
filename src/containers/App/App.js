@@ -1,6 +1,6 @@
 /** React dependencies */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// import { useRouteMatch } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 /** Utils */
 import axios from 'axios'
@@ -15,6 +15,9 @@ import Journey from '../Pages/Journey/Journey'
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import SettingPage from '../Pages/SettingPage/SettingPage'
 import ContactUs from '../Pages/ContactUs/ContactUs'
+import TipsAndTricks from '../Pages/TipsAndTricks/TipsAndTricks'
+import Category from '../Pages/Category/Category'
+import { Community } from '../Pages/Community/Community'
 
 /** Development Pages only */
 import UserList from '../DevPages/UserList/UserList'
@@ -26,13 +29,11 @@ import SidebarLte from '../../components/Sidebar/SidebarLte'
 import ChatsBody from '../../components/Chats/ChatsBody'
 import Footer from '../../components/Footer/Footer'
 import { AddPost } from '../../components/Post/AddPost'
-import TipsAndTricks from '../Pages/TipsAndTricks/TipsAndTricks'
-import Category from '../Pages/Category/Category'
-import { Community } from '../Pages/Community/Community'
 import ProfileCard from '../../components/Profile/ProfileCard'
 
 const App = () => {
     axios.defaults.withCredentials = true
+    const currentUser = useSelector((state) => state.user.value)
 
     return (
         <Router>
@@ -68,6 +69,16 @@ const App = () => {
                         </div>
                     </Route>
 
+                    {/* Home Page */}
+                    <Route exact path='/'>
+                        <NavbarLte />
+                        <SidebarLte />
+                        <div className='content-wrapper'>
+                            <Home />
+                            <Footer />
+                        </div>
+                    </Route>
+
                     {/* Contact Us Page */}
                     <Route exact path='/contact-us'>
                         <NavbarLte />
@@ -94,16 +105,6 @@ const App = () => {
                         <SidebarLte />
                         <div className='content-wrapper'>
                             <Gallery />
-                            <Footer />
-                        </div>
-                    </Route>
-
-                    {/* Home Page */}
-                    <Route exact path='/'>
-                        <NavbarLte />
-                        <SidebarLte />
-                        <div className='content-wrapper'>
-                            <Home />
                             <Footer />
                         </div>
                     </Route>
@@ -163,7 +164,7 @@ const App = () => {
                         <NavbarLte />
                         <SidebarLte />
                         <div className='content-wrapper'>
-                            <ProfileCard />
+                            <ProfileCard user={currentUser} />
                             <Footer />
                         </div>
                     </Route>

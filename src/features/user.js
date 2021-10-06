@@ -6,9 +6,9 @@ const initialStateValue = {
     img_thumb:'',
     img_bg:'',
     email:'',
-    follower:[],
+    followers:[],
     following:[],
-    posts:[],
+    post:[],
     
 
 }
