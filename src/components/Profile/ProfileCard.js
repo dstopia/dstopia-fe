@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux' // access global state
 
-const ProfileCard = ({user}) => {
+const ProfileCard = ({ user }) => {
+    const currentUser = useSelector((state) => state.user.value)
 
     return user.username !== undefined ? (
         <div className='mx-3 pt-3'>
@@ -47,11 +48,13 @@ const ProfileCard = ({user}) => {
                             className='btn btn-primary flex-grow-1 me-2 btn-sm'>
                             <b>Profile</b>
                         </Link>
-                        <Link
-                            to='/add-post'
-                            className='btn btn-primary btn-sm me-2'>
-                            <i className='fas fa-plus'></i>
-                        </Link>
+                        {currentUser._id === user._id && (
+                            <Link
+                                to='/add-post'
+                                className='btn btn-primary btn-sm me-2'>
+                                <i className='fas fa-plus'></i>
+                            </Link>
+                        )}
                         <Link to='#' className='btn btn-primary btn-sm'>
                             <i className='fas fa-bars'></i>
                         </Link>
