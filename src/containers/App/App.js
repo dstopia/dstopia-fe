@@ -168,10 +168,10 @@ const App = () => {
                         <div className='content-wrapper'>
                             <div className='container'>
                                 <div className='row'>
-                                    <div className='col'>
+                                    <div className='col-12 col-sm-6'>
                                         <ProfileCard user={currentUser} />
                                     </div>
-                                    <div className='col d-none d-sm-block'>
+                                    <div className='col-12 col-sm-6'>
                                         <AboutMeCard />
                                     </div>
                                 </div>

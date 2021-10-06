@@ -65,7 +65,12 @@ const ProfileCard = ({ user }) => {
                                 <i className='fas fa-plus'></i>
                             </Link>
                         )}
-                        <Link to='#' className='btn btn-primary btn-sm'>
+                        <Link
+                            to='#'
+                            className='btn btn-primary btn-sm d-block d-sm-none'
+                            data-bs-toggle='collapse'
+                            data-bs-target='#aboutMeCard'
+                            aria-expanded='false'>
                             <i className='fas fa-bars'></i>
                         </Link>
                     </div>

@@ -3,7 +3,7 @@ import React from 'react'
 const AboutMeCard = () => {
     return (
         /* About Me Box */
-        <div className='card card-primary m-3'>
+        <div className='card card-primary m-3 collapse show-sm' id='aboutMeCard'>
             <div className='card-header'>
                 <h3 className='card-title'>About Me</h3>
             </div>
