@@ -56,7 +56,7 @@ export default function SignIn() {
             .post(`${BASE_URL}/user/login`, input)
             .then((user) => {
                 // data valid
-                setError({})
+                setError()
                 dispatch(login(user.data))
                 dispatch(loggedIn())
                 history.push('/')
@@ -78,7 +78,7 @@ export default function SignIn() {
                 password: '123456',
             })
             .then((user) => {
-                setError({})
+                setError()
                 dispatch(login(user.data))
                 dispatch(loggedIn())
                 history.push('/')
