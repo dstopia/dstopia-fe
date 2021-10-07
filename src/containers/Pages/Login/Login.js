@@ -20,7 +20,7 @@ export default function SignIn() {
         password: '',
     })
 
-    const [error, setError] = useState({})
+    const [error, setError] = useState()
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -33,7 +33,7 @@ export default function SignIn() {
                 console.log(user)
             })
             .catch((err) => {
-                console.log(err)
+                console.log(err.data)
             })
         return () => {
             console.log('clean up')
@@ -58,22 +58,15 @@ export default function SignIn() {
                 // data valid
                 setError({})
                 dispatch(login(user.data))
-                console.log(user)
                 dispatch(loggedIn())
                 history.push('/')
             })
             .catch((err) => {
-                console.log(err.message)
-                // // data not valid
-                // if (err.response !== undefined) {
-                //     if (err.response.data !== undefined) {
-                //         setError(err.response.data)
-                //     } else {
-                //         setError({ msg: 'Error not defined' })
-                //     }
-                // } else {
-                //     setError({ msg: 'Error not defined' })
-                // }
+                if (err.response?.data !== undefined) {
+                    setError(err.response.data.error)
+                } else {
+                    setError('connection error')
+                }
             })
     }
 
@@ -91,10 +84,10 @@ export default function SignIn() {
                 history.push('/')
             })
             .catch((err) => {
-                if (err.response.data) {
-                    setError(err.response.data)
+                if (err.response?.data !== undefined) {
+                    setError(err.response.data.error)
                 } else {
-                    setError({ msg: 'Error not defined' })
+                    setError('connection error')
                 }
             })
     }
@@ -113,9 +106,9 @@ export default function SignIn() {
                         className='w-75 p-4 mx-auto shadow rounded'
                         onSubmit={handleSubmit}>
                         <h3 className='mb-4 text-center'>Login to Dstopia!</h3>
-                        {error.msg && (
+                        {error && (
                             <div className='alert alert-danger' role='alert'>
-                                {error.msg}
+                                {error}
                             </div>
                         )}
                         <hr className='mb-3' />

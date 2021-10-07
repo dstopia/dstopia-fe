@@ -41,7 +41,6 @@ const App = () => {
         <Router>
             <Switch>
                 <div className='wrapper'>
-                    {/* <Loader /> */}
                     {/* Register Page */}
                     <Route path='/register' component={Register} />
 
@@ -189,16 +188,6 @@ const App = () => {
                 </div>
             </Switch>
         </Router>
-    )
-}
-
-const Loader = () => {
-    return (
-        <div className='preloader flex-column justify-content-center align-items-center'>
-            <div className='spinner-border text-primary' role='status'>
-                <span className='visually-hidden'></span>
-            </div>
-        </div>
     )
 }
 
