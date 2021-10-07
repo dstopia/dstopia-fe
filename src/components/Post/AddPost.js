@@ -16,6 +16,9 @@ export const AddPost = () => {
         caption: '',
         hashtag: '',
     })
+    const [imgSrc, setImgSrc] = useState(
+        'https://source.unsplash.com/random/400x400'
+    )
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,14 +26,12 @@ export const AddPost = () => {
         axios
             .post(`${BASE_URL}/post`, post)
             .then((data) => {
-                console.log(data.data)
                 setIsPending(false)
                 history.push('/')
             })
             .catch((err) => {
                 setIsPending(false)
                 setError(true)
-                console.log({ err })
             })
     }
 
@@ -40,6 +41,27 @@ export const AddPost = () => {
             ...prevState,
             [id]: value,
         }))
+    }
+
+    const uploadImage = (files) => {
+        console.log(files[0])
+    }
+
+    // menampilkan preview image sebaelum di upload
+    const imagePreview = (event) => {
+        const allowedExt = /(\.jpg|\.jpeg|\.png)$/i
+        if (!allowedExt.exec(event.target.value)) {
+            setError(true)
+            event.target.value = ''
+        } else {
+            if (event.target.files && event.target.files[0]) {
+                const reader = new FileReader()
+                reader.onload = (e) => {
+                    setImgSrc(e.target.result)
+                }
+                reader.readAsDataURL(event.target.files[0])
+            }
+        }
     }
 
     return (
@@ -65,7 +87,11 @@ export const AddPost = () => {
                         src='https://source.unsplash.com/random/128x128'
                         alt='Not found'
                     />
-                    <span className='username'>{currentUser.username ? currentUser.username: 'No User'}</span>
+                    <span className='username'>
+                        {currentUser.username
+                            ? currentUser.username
+                            : 'No User'}
+                    </span>
                     <span className='description'>
                         Edit post location
                         <Link to='#'>
@@ -88,7 +114,7 @@ export const AddPost = () => {
             <div className='card-body'>
                 <img
                     className='img-fluid pad mb-3'
-                    src='https://source.unsplash.com/random/400x400'
+                    src={imgSrc}
                     alt='Not Found'
                 />
                 <form onSubmit={handleSubmit}>
@@ -100,7 +126,10 @@ export const AddPost = () => {
                             className='form-control'
                             id='image'
                             type='file'
-                            onChange={handleChange}
+                            onChange={(e) => {
+                                imagePreview(e)
+                                uploadImage(e.target.files)
+                            }}
                         />
                     </div>
                     <div className='form-floating mb-3'>
@@ -127,7 +156,9 @@ export const AddPost = () => {
                             onChange={handleChange}
                         />
                     </div>
-                    <div className="form-text" id='hashHelp'>Separate by space.</div>
+                    <div className='form-text' id='hashHelp'>
+                        Separate by space.
+                    </div>
                     <div className='d-grid my-3'>
                         {isPending ? (
                             <button
