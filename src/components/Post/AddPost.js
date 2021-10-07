@@ -15,17 +15,28 @@ export const AddPost = () => {
         username: currentUser.username,
         caption: '',
         hashtag: '',
+        image: '',
     })
+
     const [imgSrc, setImgSrc] = useState(
         'https://source.unsplash.com/random/400x400'
     )
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         setIsPending(true)
+
+        const formData = new FormData()
+        formData.append('userId', post.userId)
+        formData.append('username', post.username)
+        formData.append('caption', post.caption)
+        formData.append('hashtag', post.hashtag)
+        formData.append('image', post.image)
+
         axios
-            .post(`${BASE_URL}/post`, post)
-            .then((data) => {
+            .post(`${BASE_URL}/post`, formData)
+            .then((res) => {
                 setIsPending(false)
                 history.push('/')
             })
@@ -43,8 +54,11 @@ export const AddPost = () => {
         }))
     }
 
-    const uploadImage = (files) => {
-        console.log(files[0])
+    const handleImage = (image) => {
+        setPost((prevState) => ({
+            ...prevState,
+            image,
+        }))
     }
 
     // menampilkan preview image sebaelum di upload
@@ -54,6 +68,7 @@ export const AddPost = () => {
             setError(true)
             event.target.value = ''
         } else {
+            setError(false)
             if (event.target.files && event.target.files[0]) {
                 const reader = new FileReader()
                 reader.onload = (e) => {
@@ -112,24 +127,25 @@ export const AddPost = () => {
             </div>
             {/* /.card-header */}
             <div className='card-body'>
-                <img
-                    className='img-fluid pad mb-3'
-                    src={imgSrc}
-                    alt='Not Found'
-                />
                 <form onSubmit={handleSubmit}>
                     <div className='mb-3'>
-                        <label htmlFor='formFileSm' className='form-label'>
-                            Select Image
+                        <label htmlFor='image' className='form-label'>
+                            <img
+                                className='img-fluid pad mb-3'
+                                src={imgSrc}
+                                alt='Not Found'
+                            />
                         </label>
                         <input
                             className='form-control'
                             id='image'
                             type='file'
+                            accept='image/*'
                             onChange={(e) => {
                                 imagePreview(e)
-                                uploadImage(e.target.files)
+                                handleImage(e.target.files[0])
                             }}
+                            hidden='true'
                         />
                     </div>
                     <div className='form-floating mb-3'>

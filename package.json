@@ -13,6 +13,7 @@
         "axios": "^0.21.4",
         "bootstrap": "^5.1.1",
         "chalk": "^4.1.2",
+        "cloudinary": "^1.27.0",
         "dotenv": "^10.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -38,7 +39,7 @@
             "react-app/jest"
         ],
         "rules": {
-            "no-console":"warn"
+            "no-console": "warn"
         }
     },
     "browserslist": {
