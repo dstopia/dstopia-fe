@@ -46,7 +46,7 @@ export default function Post({ post }) {
             <div className='card-body'>
                 <img
                     className='img-fluid pad mb-3'
-                    src='https://source.unsplash.com/random/1254x836'
+                    src={post.img_post_url}
                     alt='Not Found'
                 />
 

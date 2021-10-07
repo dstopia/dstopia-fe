@@ -18,24 +18,15 @@ export const AddPost = () => {
         image: '',
     })
 
-    const [imgSrc, setImgSrc] = useState(
-        'https://source.unsplash.com/random/400x400'
-    )
+    const [imgSrc, setImgSrc] = useState()
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         setIsPending(true)
 
-        const formData = new FormData()
-        formData.append('userId', post.userId)
-        formData.append('username', post.username)
-        formData.append('caption', post.caption)
-        formData.append('hashtag', post.hashtag)
-        formData.append('image', post.image)
-
         axios
-            .post(`${BASE_URL}/post`, formData)
+            .post(`${BASE_URL}/post`, post)
             .then((res) => {
                 setIsPending(false)
                 history.push('/')
@@ -54,13 +45,6 @@ export const AddPost = () => {
         }))
     }
 
-    const handleImage = (image) => {
-        setPost((prevState) => ({
-            ...prevState,
-            image,
-        }))
-    }
-
     // menampilkan preview image sebaelum di upload
     const imagePreview = (event) => {
         const allowedExt = /(\.jpg|\.jpeg|\.png)$/i
@@ -71,10 +55,15 @@ export const AddPost = () => {
             setError(false)
             if (event.target.files && event.target.files[0]) {
                 const reader = new FileReader()
+                reader.readAsDataURL(event.target.files[0])
                 reader.onload = (e) => {
                     setImgSrc(e.target.result)
+
+                    setPost((prevState) => ({
+                        ...prevState,
+                        image: e.target.result,
+                    }))
                 }
-                reader.readAsDataURL(event.target.files[0])
             }
         }
     }
@@ -130,11 +119,19 @@ export const AddPost = () => {
                 <form onSubmit={handleSubmit}>
                     <div className='mb-3'>
                         <label htmlFor='image' className='form-label'>
-                            <img
-                                className='img-fluid pad mb-3'
-                                src={imgSrc}
-                                alt='Not Found'
-                            />
+                            {imgSrc ? (
+                                <img
+                                    className='img-fluid pad mb-3'
+                                    src={imgSrc}
+                                    alt='Not Found'
+                                />
+                            ) : (
+                                <div className='card'>
+                                    <div className='card-body'>
+                                        Select Image
+                                    </div>
+                                </div>
+                            )}
                         </label>
                         <input
                             className='form-control'
@@ -143,7 +140,6 @@ export const AddPost = () => {
                             accept='image/*'
                             onChange={(e) => {
                                 imagePreview(e)
-                                handleImage(e.target.files[0])
                             }}
                             hidden='true'
                         />
@@ -169,6 +165,7 @@ export const AddPost = () => {
                             className='form-control'
                             placeholder='Hashtag'
                             id='hashtag'
+                            autoComplete='off'
                             onChange={handleChange}
                         />
                     </div>

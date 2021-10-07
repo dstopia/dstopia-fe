@@ -12,7 +12,7 @@ export const UserPost = ({ posts }) => {
                     <div className='col-6 col-sm-4' key={post._id}>
                         <img
                             className='img-fluid m-1 m-sm-2 m-xl-3 rounded'
-                            src='https://source.unsplash.com/random/400x300'
+                            src={post.img_post_url}
                             alt='Not Found'
                         />
                     </div>
